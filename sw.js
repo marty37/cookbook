@@ -2,7 +2,7 @@
    Stratégia: network-first pre HTML/data.js (nech sú recepty čerstvé),
    cache-first pre obrázky a ostatné. Všetko navštívené sa ukladá do cache. */
 
-const CACHE = "recepty-v1";
+const CACHE = "recepty-v2";
 const CORE = ["index.html", "data.js", "manifest.json"];
 
 self.addEventListener("install", e => {
@@ -22,7 +22,7 @@ self.addEventListener("fetch", e => {
 
   e.respondWith(
     svieze
-      ? fetch(e.request)
+      ? fetch(e.request, { cache: "no-store" })   /* obíď HTTP cache — vždy čerstvé zo servera */
           .then(r => { const kopia = r.clone(); caches.open(CACHE).then(c => c.put(e.request, kopia)); return r; })
           .catch(() => caches.match(e.request).then(r => r || caches.match("index.html")))
       : caches.match(e.request).then(r => r || fetch(e.request).then(r2 => {
