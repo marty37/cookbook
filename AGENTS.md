@@ -10,6 +10,7 @@ recepty/
 ├── index.html          # prehľad: vyhľadávanie, fazetové filtre, nákupný zoznam, obľúbené
 ├── data.js             # VŠETKY dáta receptov (pole RECEPTY) + SLOVNIK + STAVY
 ├── kategorie.json      # kontrolovaný slovník kategórií (zdroj pravdy, zrkadlí SLOVNIK v data.js)
+├── generator.py        # generátor detailných stránok — použi pri dávkach (viď nižšie)
 ├── manifest.json       # PWA manifest (nemeniť bez dôvodu)
 ├── sw.js               # service worker — offline cache; pri zásadnej zmene štruktúry zdvihni CACHE verziu
 ├── img/                # ikony PWA + lokálne uložené fotky receptov
@@ -19,12 +20,26 @@ recepty/
 
 ## Ako pridať recept
 
-Vstupom je URL, screenshot alebo text receptu. Postup:
+Vstupom môže byť: URL blogu, URL videa (Instagram/YouTube/TikTok), screenshot,
+fotka alebo text. Postup:
 
-1. **Extrahuj dáta.** Z URL preferuj schema.org/Recipe (JSON-LD), inak parsuj obsah stránky.
-   Zo screenshotu/fotky prečítaj text vision-om. Extrahuj: názov, suroviny (s množstvami),
-   postup po krokoch, čas, porcie, fotku, autora/zdroj.
-2. **Prelož do slovenčiny** (názvy, suroviny, kroky). Zachovaj pôvodné množstvá a jednotky.
+1. **Extrahuj dáta.** Extrahuj: názov, suroviny (s množstvami), postup po krokoch,
+   čas, porcie, fotku, autora/zdroj. Podľa typu vstupu:
+   - **URL blogu/webu**: preferuj schema.org/Recipe (JSON-LD), inak parsuj obsah stránky.
+   - **URL videa (Instagram, YouTube, TikTok…)**: recept býva v popisku videa —
+     skús ho fetchnúť. Instagram a TikTok často fetch nepustia (login wall);
+     vtedy si od používateľa vypýtaj screenshot popisku alebo skopírovaný text.
+     Ak popisok odkazuje na blog, choď na blog a spracuj ten (do `url` daj blog,
+     do `video` odkaz na video).
+   - **Recept len vo videu (bez textu)**: video neviem pozrieť — vypýtaj si
+     screenshoty kľúčových záberov (suroviny, kroky) alebo stručný prepis.
+   - **Screenshot/fotka**: prečítaj vision-om. Fotku ulož do `img/<id>.jpg`
+     a použi ako hero obrázok.
+2. **Prelož do slovenčiny** — platí aj pre anglické a české recepty (názvy,
+   suroviny, kroky). Zachovaj pôvodné množstvá a jednotky; pri anglických
+   prepočítaj imperiálne jednotky (cups, oz, °F) na metrické (ml/g, °C)
+   a pôvodný údaj nechaj v zátvorke. Pôvodný názov a kľúčové anglické
+   výrazy pridaj do `hladanie`.
 3. **Zaraď do kategórií — VÝHRADNE z `kategorie.json`:**
    - `chod`: presne jedna hodnota
    - `dieta`, `surovina` (1–2 hlavné), `prakticke`: polia, môžu byť prázdne
@@ -41,9 +56,19 @@ Vstupom je URL, screenshot alebo text receptu. Postup:
    - `suroviny`: `[{t: "500 g zemiakov"}, {t: "soľ", s: true}]` — `s: true` označuje
      bežnú surovinu zo špajze (soľ, voda, olej, korenie…), tá sa do nákupného
      zoznamu pre Rohlík pridáva len voliteľne
-   - `hladanie`: kľúčové slová navyše pre fulltext (synonymá, CZ výrazy z originálu)
+   - `hladanie`: kľúčové slová navyše pre fulltext (synonymá, CZ/EN výrazy z originálu)
    - `pridane`: dátum spracovania YYYY-MM-DD, `url`: originál, `zdroj`: doména
-5. **Vytvor detailnú stránku `<id>.html`.** Skopíruj štruktúru existujúcej stránky
+     (pri Instagrame `instagram.com/<autor>`)
+   - `video` (voliteľné): URL videa (reel, YouTube…), ak recept pochádza z videa
+     alebo ho video dopĺňa. Na detailnej stránke zobraz vedľa zdroja link
+     "▶️ pozrieť video".
+   - `jazykOriginalu` (voliteľné): uveď ak nie je CZ/SK, napr. `"en"`
+5. **Vytvor detailnú stránku `<id>.html`.** Pri 2+ receptoch naraz VŽDY použi
+   `generator.py`: sprav JSON dávku (pole objektov — polia ako v data.js plus
+   `emoji`, `lead`, `fakty`, `kroky`, `tipy`, `metaAutor`, `zdrojText`; vzor
+   v hlavičke skriptu) a spusti `python3 generator.py davka.json`. Vygeneruje
+   stránky, placeholder obrázky aj vloží záznamy do data.js s kontrolou duplicít.
+   Pri jednom recepte môžeš stránku spraviť aj ručne: Skopíruj štruktúru existujúcej stránky
    (napr. `spanielska-zemiakova-omeleta.html`) vrátane CSS a skriptov na konci.
    Vymeň: title, h1, OG meta tagy (og:title, og:description, og:image — kvôli
    náhľadom pri zdieľaní cez Signal/WhatsApp), meta riadok, tagy, hero obrázok,

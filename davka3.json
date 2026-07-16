@@ -1,0 +1,28 @@
+[
+{
+  "id":"pecene-donuty","nazov":"Domáce pečené donuty s čokoládou","emoji":"🍩",
+  "chod":"dezert/sladké","dieta":["vegetariánske"],"surovina":["vajcia","čokoláda"],"prakticke":["z rúry"],
+  "stav":"nové","cas":40,"porcie":"12 ks",
+  "lead":"Donuty z rúry namiesto fritézy — jogurtové cesto, 15 minút pečenia, čokoládová poleva a cukríky na ozdobu.",
+  "fakty":[["⏱️ Celkovo","~40 min (pečenie 15 min)"],["🔥 Rúra","175 °C"],["📊 Náročnosť","ľahká"]],
+  "suroviny":[
+    {"t":"3 vajíčka"},{"t":"50 g cukru","s":true},{"t":"25 ml oleja","s":true},
+    {"t":"125 g bieleho jogurtu"},{"t":"5 g prášku do pečiva"},{"t":"5 g vanilkového cukru"},
+    {"t":"120 g hladkej múky"},{"t":"čokoláda + troška smotany (poleva)"},
+    {"t":"cukríky na ozdobenie"}],
+  "kroky":[
+    "Vyšľahaj vajcia s cukrom.",
+    "Pridaj olej a jogurt, znova vymiešaj.",
+    "Pridaj prášok do pečiva, vanilkový cukor a múku a zamiešaj.",
+    "Formu na donuty namaž a naplň zmesou — nie úplne po okraj.",
+    "Peč vo vyhriatej rúre na 175 °C zhruba 15 minút.",
+    "Medzitým zohrej čokoládu v mikrovlnke, zalej horúcou smotanou, nechaj 2 minúty postáť a premiešaj.",
+    "Vychladnuté donuty namoč do čokolády a ozdob cukríkmi.",
+    "Odlož do chladničky."],
+  "tipy":["Treba silikónovú alebo plechovú formu na donuty; bez nej fungujú aj ako muffiny."],
+  "obrazok":"img/pecene-donuty.jpg","zdroj":"instagram.com/lucia_koren",
+  "url":"https://www.instagram.com/reel/Cq-2kKaujgV/","video":"https://www.instagram.com/reel/Cq-2kKaujgV/",
+  "pridane":"2026-07-16","hladanie":"donuty donut šišky pečené jogurt čokoláda cukríky deti",
+  "metaAutor":"Instagram · @lucia_koren…","zdrojText":"Instagram reel — @lucia_koren… (spracované zo screenshotov, účet má obmedzený prístup; ilustračný obrázok)"
+}
+]
