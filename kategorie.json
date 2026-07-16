@@ -1,0 +1,43 @@
+{
+  "_popis": "Kontrolovaný slovník kategórií. Nové hodnoty pridávať len vedome — pri spracovaní receptov sa zaraďuje výhradne do týchto hodnôt.",
+  "chod": [
+    "raňajky/desiata",
+    "polievka",
+    "hlavné jedlo",
+    "príloha",
+    "šalát",
+    "nátierka",
+    "pečivo",
+    "dezert/sladké",
+    "chuťovka",
+    "omáčka/základ"
+  ],
+  "dieta": [
+    "bez lepku",
+    "bez laktózy",
+    "bez vajec",
+    "vegetariánske",
+    "vegánske"
+  ],
+  "surovina": [
+    "kuracie",
+    "hovädzie/bravčové",
+    "ryby",
+    "strukoviny",
+    "zelenina",
+    "zemiaky",
+    "cestoviny/ryža",
+    "tvaroh/syr",
+    "vajcia",
+    "ovsené vločky/obilniny",
+    "ovocie",
+    "čokoláda"
+  ],
+  "prakticke": [
+    "do 30 min",
+    "z rúry",
+    "jedna panvica/hrniec",
+    "na zamrazenie",
+    "bez pečenia"
+  ]
+}

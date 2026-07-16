@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#c05621">
+<meta property="og:type" content="website">
+<meta property="og:title" content="🍲 Naše recepty">
+<meta property="og:description" content="Rodinná zbierka receptov — všetko na jednom mieste.">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<title>Naše recepty</title>
+<style>
+  :root{--bg:#faf7f2;--card:#fff;--ink:#2d2a26;--muted:#8a8378;--accent:#c05621;--chip:#f0e9df;--chip-on:#c05621;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--bg);color:var(--ink);}
+  header{padding:36px 24px 4px;text-align:center}
+  header h1{font-size:2.1rem;font-weight:400}
+  header p{color:var(--muted);margin-top:6px;font-style:italic}
+
+  .searchwrap{position:sticky;top:0;z-index:20;background:var(--bg);padding:12px 24px 10px;max-width:1020px;margin:8px auto 0}
+  #search{width:100%;padding:12px 18px;font-size:1rem;border:1px solid #ddd4c8;border-radius:999px;background:#fff;font-family:inherit}
+  #search:focus{outline:2px solid var(--accent);border-color:transparent}
+
+  .toolbar{max-width:1020px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;border-bottom:2px solid var(--chip);padding-bottom:10px}
+  .tab{font-family:system-ui,sans-serif;font-size:.88rem;padding:7px 15px;border-radius:999px;background:transparent;border:none;cursor:pointer;color:var(--ink)}
+  .tab.on{background:var(--ink);color:#fff}
+  .facets{display:flex;flex-direction:column;gap:8px}
+  .facet{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .facet .lbl{font-family:system-ui,sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);width:86px;flex-shrink:0}
+  .chip{font-family:system-ui,sans-serif;font-size:.8rem;padding:5px 13px;border-radius:999px;background:var(--chip);border:none;cursor:pointer;color:var(--ink)}
+  .chip.on{background:var(--chip-on);color:#fff}
+  .chip:disabled{opacity:.3;cursor:default}
+  .cnt{opacity:.55;font-size:.75em;margin-left:3px}
+  @media (pointer:coarse){.chip{padding:9px 15px;font-size:.85rem}.tab{padding:10px 17px}}
+
+  .statusbar{max-width:1020px;margin:16px auto 0;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:system-ui,sans-serif;font-size:.8rem;color:var(--muted)}
+  .statusbar .actions{display:flex;gap:8px}
+  .btn{font-family:system-ui,sans-serif;font-size:.8rem;padding:7px 14px;border-radius:999px;border:1px solid #ddd4c8;background:#fff;cursor:pointer;color:var(--ink)}
+  .btn:hover{border-color:var(--accent)}
+  #reset{background:none;border:none;color:var(--accent);cursor:pointer;font-size:.8rem;text-decoration:underline;display:none}
+
+  .grid{max-width:1020px;margin:14px auto 110px;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
+  .card{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.07);color:inherit;transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column;position:relative}
+  .card:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.12)}
+  .card a.cover{text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1}
+  .card img{width:100%;height:170px;object-fit:cover;background:#eee}
+  .card .body{padding:15px 17px 15px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .card h2{font-size:1.06rem;font-weight:600;line-height:1.35;padding-right:30px}
+  .card .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto}
+  .tag{font-family:system-ui,sans-serif;font-size:.68rem;padding:3px 9px;border-radius:999px;background:var(--chip);color:#6b6357}
+  .tag.chod{background:#e8e2d6;font-weight:600}
+  .tag.stav{background:#e7efe3;color:#3d5a34}
+  .card .src{font-family:system-ui,sans-serif;font-size:.72rem;color:var(--muted)}
+  .cardbtns{display:flex;gap:8px;padding:0 17px 15px}
+  .iconbtn{font-family:system-ui,sans-serif;font-size:.78rem;padding:7px 12px;border-radius:999px;border:1px solid #e5ddd0;background:#fff;cursor:pointer;flex:1;color:var(--ink)}
+  .iconbtn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .star{position:absolute;top:10px;right:10px;font-size:1.25rem;background:rgba(255,255,255,.88);border:none;border-radius:50%;width:38px;height:38px;cursor:pointer;line-height:1;z-index:2}
+  .badge-cas{position:absolute;top:10px;left:10px;font-family:system-ui,sans-serif;font-size:.72rem;background:rgba(255,255,255,.9);border-radius:999px;padding:4px 10px}
+  .empty{text-align:center;color:var(--muted);padding:48px;display:none;grid-column:1/-1;font-style:italic}
+  footer{text-align:center;color:var(--muted);font-size:.8rem;padding:0 0 100px;font-family:system-ui,sans-serif}
+
+  /* košík — spodná lišta */
+  #cartbar{position:fixed;left:0;right:0;bottom:0;background:var(--ink);color:#fff;display:none;z-index:30}
+  #cartbar .inner{max-width:1020px;margin:0 auto;padding:13px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:system-ui,sans-serif;font-size:.9rem}
+  #cartbar button{font-family:system-ui,sans-serif;padding:9px 18px;border-radius:999px;border:none;cursor:pointer}
+  #cartbar .show{background:var(--accent);color:#fff;font-weight:600}
+  #cartbar .clear{background:transparent;color:#cfc9c0;text-decoration:underline}
+
+  /* modal */
+  #overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;z-index:40;padding:20px}
+  #modal{max-width:560px;margin:6vh auto 0;background:#fff;border-radius:16px;padding:26px 26px 22px;max-height:82vh;overflow:auto;font-family:system-ui,sans-serif}
+  #modal h3{font-family:Georgia,serif;font-size:1.3rem;font-weight:500;margin-bottom:4px}
+  #modal .sub{font-size:.82rem;color:var(--muted);margin-bottom:16px}
+  #modal ul{list-style:none;margin:0 0 14px}
+  #modal li{padding:7px 0;border-bottom:1px dashed #e5ddd0;font-size:.92rem}
+  #modal li.sp{color:var(--muted)}
+  #modal .grp{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:12px 0 2px}
+  #modal label{display:flex;gap:8px;align-items:center;font-size:.85rem;margin-bottom:16px;cursor:pointer}
+  #modal .row{display:flex;gap:10px;justify-content:flex-end}
+  #modal .primary{background:var(--accent);color:#fff;border:none;padding:10px 20px;border-radius:999px;cursor:pointer;font-weight:600}
+  #modal .ghost{background:none;border:1px solid #ddd4c8;padding:10px 20px;border-radius:999px;cursor:pointer}
+  #modal .hint{font-size:.78rem;color:var(--muted);margin-top:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>🍲 Naše recepty</h1>
+  <p>zbierka receptov zo Signalu — všetko na jednom mieste</p>
+</header>
+
+<div class="searchwrap"><input id="search" type="search" placeholder="Hľadať recept alebo ingredienciu…"></div>
+
+<div class="toolbar">
+  <div class="tabs" id="tabs"></div>
+  <div class="facets" id="facets"></div>
+</div>
+
+<div class="statusbar">
+  <span id="count"></span>
+  <div class="actions">
+    <button id="reset">✕ zrušiť filtre</button>
+    <button class="btn" id="random">🎲 Čo dnes variť?</button>
+  </div>
+</div>
+
+<main class="grid" id="grid"><div class="empty" id="empty">Nič sa nenašlo 🤷</div></main>
+
+<footer>Generované z liniek poslaných cez Signal · kategórie podľa <code>kategorie.json</code></footer>
+
+<div id="cartbar"><div class="inner">
+  <span id="cartinfo"></span>
+  <span>
+    <button class="clear" id="cartclear">vyprázdniť</button>
+    <button class="show" id="cartshow">🛒 Nákupný zoznam</button>
+  </span>
+</div></div>
+
+<div id="overlay"><div id="modal">
+  <h3>🛒 Nákupný zoznam</h3>
+  <div class="sub" id="msub"></div>
+  <label><input type="checkbox" id="mspajza"> zahrnúť aj bežné suroviny (soľ, voda, olej…)</label>
+  <div id="mlist"></div>
+  <div class="row">
+    <button class="ghost" id="mclose">Zavrieť</button>
+    <button class="primary" id="mcopy">📋 Kopírovať pre Rohlík</button>
+  </div>
+  <div class="hint">Skopírovaný zoznam vlož AI asistentovi na Rohlik.cz („nakúp mi toto…“) alebo do vyhľadávania.</div>
+</div></div>
+
+<script src="data.js"></script>
+<script>
+const FACET_LBL={dieta:"Diéta",surovina:"Surovina",prakticke:"Praktické"};
+const CAS=[["do 30 min",r=>r.cas<=30],["do 60 min",r=>r.cas<=60],["nad 60 min",r=>r.cas>60]];
+
+/* perzistencia */
+const fav = new Set(JSON.parse(localStorage.getItem("recepty_fav")||"[]"));
+const kosik = new Set(JSON.parse(localStorage.getItem("recepty_kosik")||"[]"));
+const ulozFav=()=>localStorage.setItem("recepty_fav",JSON.stringify([...fav]));
+const ulozKosik=()=>localStorage.setItem("recepty_kosik",JSON.stringify([...kosik]));
+
+let stav={chod:null,dieta:new Set(),surovina:new Set(),prakticke:new Set(),stavy:new Set(),cas:null,fav:false,q:""};
+
+function vyhovuje(r,ignoruj){
+  if(ignoruj!=="chod"&&stav.chod&&r.chod!==stav.chod)return false;
+  for(const f of["dieta","surovina","prakticke"]){
+    if(ignoruj===f)continue;
+    for(const v of stav[f])if(!r[f].includes(v))return false;
+  }
+  if(ignoruj!=="cas"&&stav.cas){const c=CAS.find(x=>x[0]===stav.cas);if(c&&!c[1](r))return false;}
+  if(ignoruj!=="stavy"&&stav.stavy.size&&!stav.stavy.has(r.stav))return false;
+  if(stav.fav&&!fav.has(r.id))return false;
+  if(stav.q){const txt=(r.nazov+" "+r.hladanie+" "+r.zdroj+" "+r.suroviny.map(s=>s.t).join(" ")).toLowerCase();
+    if(!txt.includes(stav.q))return false;}
+  return true;
+}
+
+const el=id=>document.getElementById(id);
+const tabsEl=el("tabs"),facetsEl=el("facets"),gridEl=el("grid"),emptyEl=el("empty");
+
+function render(){
+  /* chody */
+  tabsEl.innerHTML="";
+  tabsEl.appendChild(mkBtn("tab","Všetko",RECEPTY.filter(r=>vyhovuje(r,"chod")).length,!stav.chod,()=>{stav.chod=null;render();}));
+  SLOVNIK.chod.forEach(ch=>{
+    const n=RECEPTY.filter(r=>r.chod===ch&&vyhovuje(r,"chod")).length;
+    if(n===0&&stav.chod!==ch)return;
+    tabsEl.appendChild(mkBtn("tab",ch,n,stav.chod===ch,()=>{stav.chod=stav.chod===ch?null:ch;render();}));
+  });
+
+  /* fazety */
+  facetsEl.innerHTML="";
+  for(const f of["dieta","surovina","prakticke"]){
+    const row=mkRow(FACET_LBL[f]);let any=false;
+    SLOVNIK[f].forEach(v=>{
+      if(!RECEPTY.some(r=>r[f].includes(v)))return;
+      any=true;
+      const n=RECEPTY.filter(r=>r[f].includes(v)&&vyhovuje(r,f)).length;
+      const b=mkBtn("chip",v,n,stav[f].has(v),()=>{stav[f].has(v)?stav[f].delete(v):stav[f].add(v);render();});
+      if(n===0&&!stav[f].has(v))b.disabled=true;
+      row.appendChild(b);
+    });
+    if(any)facetsEl.appendChild(row);
+  }
+  /* čas */
+  const rowC=mkRow("Čas");
+  CAS.forEach(([lbl,fn])=>{
+    const n=RECEPTY.filter(r=>fn(r)&&vyhovuje(r,"cas")).length;
+    const b=mkBtn("chip",lbl,n,stav.cas===lbl,()=>{stav.cas=stav.cas===lbl?null:lbl;render();});
+    if(n===0&&stav.cas!==lbl)b.disabled=true;
+    rowC.appendChild(b);
+  });
+  facetsEl.appendChild(rowC);
+  /* stav */
+  const rowS=mkRow("Stav");
+  STAVY.forEach(([s,ikona])=>{
+    const n=RECEPTY.filter(r=>r.stav===s&&vyhovuje(r,"stavy")).length;
+    const b=mkBtn("chip",ikona+" "+s,n,stav.stavy.has(s),()=>{stav.stavy.has(s)?stav.stavy.delete(s):stav.stavy.add(s);render();});
+    if(n===0&&!stav.stavy.has(s))b.disabled=true;
+    rowS.appendChild(b);
+  });
+  facetsEl.appendChild(rowS);
+  /* obľúbené */
+  const rowF=mkRow("Moje");
+  rowF.appendChild(mkBtn("chip","⭐ obľúbené",[...fav].length,stav.fav,()=>{stav.fav=!stav.fav;render();}));
+  facetsEl.appendChild(rowF);
+
+  /* karty */
+  gridEl.querySelectorAll(".card").forEach(e=>e.remove());
+  const vysledky=RECEPTY.filter(r=>vyhovuje(r)).sort((a,b)=>b.pridane.localeCompare(a.pridane));
+  vysledky.forEach(r=>gridEl.insertBefore(karta(r),emptyEl));
+  emptyEl.style.display=vysledky.length?"none":"block";
+
+  el("count").textContent=vysledky.length+" z "+RECEPTY.length+" receptov";
+  el("reset").style.display=(stav.chod||stav.dieta.size||stav.surovina.size||stav.prakticke.size||stav.stavy.size||stav.cas||stav.fav||stav.q)?"inline":"none";
+  renderCartbar();
+}
+
+function mkRow(lbl){const d=document.createElement("div");d.className="facet";
+  const s=document.createElement("span");s.className="lbl";s.textContent=lbl;d.appendChild(s);return d;}
+function mkBtn(cls,txt,n,on,fn){const b=document.createElement("button");b.className=cls+(on?" on":"");
+  b.innerHTML=esc(txt)+(n!=null?' <span class="cnt">'+n+"</span>":"");b.onclick=fn;return b;}
+
+function karta(r){
+  const d=document.createElement("div");d.className="card";
+  d.innerHTML=
+    '<button class="star" title="obľúbené">'+(fav.has(r.id)?"⭐":"☆")+'</button>'+
+    '<a class="cover" href="'+r.id+'.html">'+
+      '<span class="badge-cas">⏱️ '+r.cas+" min</span>"+
+      '<img src="'+r.obrazok+'" alt="" loading="lazy">'+
+      '<div class="body"><h2>'+esc(r.nazov)+"</h2>"+
+      '<div class="tags"><span class="tag chod">'+esc(r.chod)+"</span>"+
+      '<span class="tag stav">'+(STAVY.find(x=>x[0]===r.stav)||["",""])[1]+" "+esc(r.stav)+"</span>"+
+      r.dieta.map(t=>'<span class="tag">'+esc(t)+"</span>").join("")+"</div>"+
+      '<span class="src">'+esc(r.zdroj)+" · "+fmtDatum(r.pridane)+"</span></div></a>"+
+    '<div class="cardbtns"><button class="iconbtn'+(kosik.has(r.id)?" on":"")+'">'+
+      (kosik.has(r.id)?"✓ v nákupnom zozname":"🛒 do nákupného zoznamu")+"</button></div>";
+  d.querySelector(".star").onclick=e=>{e.preventDefault();fav.has(r.id)?fav.delete(r.id):fav.add(r.id);ulozFav();render();};
+  d.querySelector(".iconbtn").onclick=()=>{kosik.has(r.id)?kosik.delete(r.id):kosik.add(r.id);ulozKosik();render();};
+  return d;
+}
+
+/* ===== košík / nákupný zoznam ===== */
+function renderCartbar(){
+  const bar=el("cartbar");
+  if(!kosik.size){bar.style.display="none";return;}
+  bar.style.display="block";
+  el("cartinfo").textContent="🛒 "+kosik.size+" "+(kosik.size===1?"recept":kosik.size<5?"recepty":"receptov")+" na nákup";
+}
+el("cartclear").onclick=()=>{kosik.clear();ulozKosik();render();};
+el("cartshow").onclick=()=>{renderModal();el("overlay").style.display="block";};
+el("mclose").onclick=()=>el("overlay").style.display="none";
+el("overlay").onclick=e=>{if(e.target.id==="overlay")el("overlay").style.display="none";};
+el("mspajza").onchange=renderModal;
+
+function vybrane(){return RECEPTY.filter(r=>kosik.has(r.id));}
+function renderModal(){
+  const so=el("mspajza").checked, rs=vybrane();
+  el("msub").textContent=rs.map(r=>r.nazov).join(" · ");
+  el("mlist").innerHTML=rs.map(r=>
+    '<div class="grp">'+esc(r.nazov)+"</div><ul>"+
+    r.suroviny.filter(s=>so||!s.s).map(s=>'<li class="'+(s.s?"sp":"")+'">'+esc(s.t)+"</li>").join("")+"</ul>"
+  ).join("");
+}
+el("mcopy").onclick=()=>{
+  const so=el("mspajza").checked, rs=vybrane();
+  let txt="Nákupný zoznam ("+rs.map(r=>r.nazov).join(", ")+"):\n";
+  rs.forEach(r=>r.suroviny.filter(s=>so||!s.s).forEach(s=>txt+="- "+s.t+"\n"));
+  navigator.clipboard.writeText(txt).then(()=>{
+    el("mcopy").textContent="✓ Skopírované";
+    setTimeout(()=>el("mcopy").textContent="📋 Kopírovať pre Rohlík",1800);
+  });
+};
+
+/* ===== ostatné ovládanie ===== */
+el("search").addEventListener("input",e=>{stav.q=e.target.value.toLowerCase().trim();render();});
+el("reset").onclick=()=>{stav={chod:null,dieta:new Set(),surovina:new Set(),prakticke:new Set(),stavy:new Set(),cas:null,fav:false,q:""};el("search").value="";render();};
+el("random").onclick=()=>{
+  const v=RECEPTY.filter(r=>vyhovuje(r));
+  if(v.length)location.href=v[Math.floor(Math.random()*v.length)].id+".html";
+};
+
+function fmtDatum(d){const[y,m,dd]=d.split("-");return +dd+". "+ +m+". "+y;}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+render();
+
+/* PWA — service worker (funguje len cez https / na GitHub Pages) */
+if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+</script>
+</body>
+</html>
