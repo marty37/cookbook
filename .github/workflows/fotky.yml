@@ -1,0 +1,25 @@
+name: Stiahnut fotky receptov
+
+on:
+  workflow_dispatch: {}        # rucne spustenie v zalozke Actions
+  push:
+    paths: ["data.js", "img/_placeholders.txt"]
+
+permissions:
+  contents: write
+
+jobs:
+  fotky:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Stiahnut og:image z Instagramu
+        run: python3 stiahni_fotky.py
+      - name: Commit zmien
+        run: |
+          git config user.name "fotky-bot"
+          git config user.email "actions@github.com"
+          git add img/
+          git diff --cached --quiet || git commit -m "Fotky receptov (auto)" && git push
