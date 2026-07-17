@@ -9,7 +9,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="🍓 Jahodová cottage pena">
 <meta property="og:description" content="Dezert za 5 minút: mrazené jahody a cottage rozmixované na nadýchanú penu. Zasýti a dodá bielkoviny.">
-<meta property="og:image" content="img/jahodova-cottage-pena.jpg">
+<meta property="og:image" content="https://marty37.github.io/cookbook/img/jahodova-cottage-pena.jpg">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" href="img/icon-192.png">
 <title>Jahodová cottage pena</title>
@@ -100,12 +100,14 @@
 </div>
 <script>
 document.getElementById("copyIng").onclick=e=>{
+  e.target.style.minWidth=e.target.offsetWidth+"px";
   const t="Nákupný zoznam ("+document.querySelector("h1").textContent.trim()+"):\n"+
     [...document.querySelectorAll("ul.ing li span")].map(s=>"- "+s.textContent.trim()).join("\n");
   navigator.clipboard.writeText(t).then(()=>{e.target.textContent="✓ Skopírované";
     setTimeout(()=>e.target.textContent="📋 Kopírovať suroviny (pre Rohlík)",1800);});
 };
 document.getElementById("share").onclick=e=>{
+  e.target.style.minWidth=e.target.offsetWidth+"px";
   const d={title:document.title,url:location.href};
   if(navigator.share){navigator.share(d).catch(()=>{});}
   else navigator.clipboard.writeText(d.url).then(()=>{e.target.textContent="✓ Link skopírovaný";
@@ -114,9 +116,12 @@ document.getElementById("share").onclick=e=>{
 const kb=document.getElementById("kuchyna");let wakeLock=null,kuchynaZap=false;
 async function wlReq(){try{wakeLock=await navigator.wakeLock.request("screen");}catch(e){}}
 kb.onclick=()=>{kuchynaZap=!kuchynaZap;
+  kb.style.minWidth=kb.offsetWidth+"px";
+  const yK=kb.getBoundingClientRect().top;
   document.body.classList.toggle("kuchyna",kuchynaZap);
   kb.classList.toggle("on",kuchynaZap);
   kb.textContent=kuchynaZap?"\u2713 Kuchynsk\u00fd re\u017eim":"\ud83c\udf73 Kuchynsk\u00fd re\u017eim";
+  window.scrollBy(0,kb.getBoundingClientRect().top-yK);
   if(kuchynaZap)wlReq();else if(wakeLock){wakeLock.release();wakeLock=null;}};
 document.addEventListener("visibilitychange",()=>{if(kuchynaZap&&document.visibilityState==="visible")wlReq();});
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});

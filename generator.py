@@ -10,6 +10,8 @@ Vstupný JSON: pole objektov, polia navyše oproti data.js:
 """
 import json, sys, os, html, re
 
+BASE_URL = "https://marty37.github.io/cookbook/"   # pre absolútne og:image (Signal/WhatsApp náhľady)
+
 SABLONA = """<!DOCTYPE html>
 <html lang="sk">
 <head>
@@ -21,7 +23,7 @@ SABLONA = """<!DOCTYPE html>
 <meta property="og:type" content="article">
 <meta property="og:title" content="{emoji} {nazov}">
 <meta property="og:description" content="{ogpopis}">
-<meta property="og:image" content="{obrazok}">
+<meta property="og:image" content="{ogobrazok}">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" href="img/icon-192.png">
 <title>{nazov}</title>
@@ -102,12 +104,14 @@ SABLONA = """<!DOCTYPE html>
 </div>
 <script>
 document.getElementById("copyIng").onclick=e=>{{
+  e.target.style.minWidth=e.target.offsetWidth+"px";
   const t="Nákupný zoznam ("+document.querySelector("h1").textContent.trim()+"):\\n"+
     [...document.querySelectorAll("ul.ing li span")].map(s=>"- "+s.textContent.trim()).join("\\n");
   navigator.clipboard.writeText(t).then(()=>{{e.target.textContent="✓ Skopírované";
     setTimeout(()=>e.target.textContent="📋 Kopírovať suroviny (pre Rohlík)",1800);}});
 }};
 document.getElementById("share").onclick=e=>{{
+  e.target.style.minWidth=e.target.offsetWidth+"px";
   const d={{title:document.title,url:location.href}};
   if(navigator.share){{navigator.share(d).catch(()=>{{}});}}
   else navigator.clipboard.writeText(d.url).then(()=>{{e.target.textContent="✓ Link skopírovaný";
@@ -116,9 +120,12 @@ document.getElementById("share").onclick=e=>{{
 const kb=document.getElementById("kuchyna");let wakeLock=null,kuchynaZap=false;
 async function wlReq(){{try{{wakeLock=await navigator.wakeLock.request("screen");}}catch(e){{}}}}
 kb.onclick=()=>{{kuchynaZap=!kuchynaZap;
+  kb.style.minWidth=kb.offsetWidth+"px";
+  const yK=kb.getBoundingClientRect().top;
   document.body.classList.toggle("kuchyna",kuchynaZap);
   kb.classList.toggle("on",kuchynaZap);
   kb.textContent=kuchynaZap?"✓ Kuchynský režim":"🍳 Kuchynský režim";
+  window.scrollBy(0,kb.getBoundingClientRect().top-yK);
   if(kuchynaZap)wlReq();else if(wakeLock){{wakeLock.release();wakeLock=null;}}}};
 document.addEventListener("visibilitychange",()=>{{if(kuchynaZap&&document.visibilityState==="visible")wlReq();}});
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{{}});
@@ -165,8 +172,10 @@ def stranka(r):
         zdroj = f'<a href="{e(r["url"])}" target="_blank" rel="noopener">{e(r["zdrojText"])}</a>'
     else:
         zdroj = e(r["zdrojText"])
+    ogobrazok = r["obrazok"] if r["obrazok"].startswith("http") else BASE_URL + r["obrazok"]
     return SABLONA.format(
         emoji=r["emoji"], nazov=e(r["nazov"]), ogpopis=e(r["lead"][:180]), obrazok=e(r["obrazok"]),
+        ogobrazok=e(ogobrazok),
         metaAutor=e(r["metaAutor"]), datum=fmt_datum(r["pridane"]), tagy=tagy, lead=e(r["lead"]),
         fakty=fakty, suroviny=sur, kroky=kroky, tipy=tipy, videobtn=video, zdrojText=zdroj)
 
