@@ -86,8 +86,15 @@ fotka alebo text. Postup:
 - Dizajn: nemeniť bez žiadosti. Farby cez CSS premenné v `:root`, serif Georgia
   na obsah, system-ui na UI prvky. Všetok CSS/JS inline v stránke (žiadne externé
   závislosti, jediná výnimka je zdieľaný `data.js`).
-- Fotky: zatiaľ hotlink na originál (pole `obrazok`). Ak zdroj zanikol alebo je
-  fotka zo screenshotu, ulož ju do `img/<id>.jpg` a odkazuj relatívne.
+- Fotky: pri spracovaní vznikajú placeholdery (generator.py). Skutočné fotky
+  z IG reelov sťahuje `stiahni_fotky_lokalne.py`, ktorý si používateľ spustí
+  na svojom počítači (overené: IG vydá og:image len crawler user-agentom
+  typu facebookexternalhit; z GitHub Actions runnerov je IG blokovaný — workflow
+  fotky.yml je preto nefunkčný záložný pokus). Pri novej dávke: doplň nové
+  recepty do zoznamu RECEPTY v `stiahni_fotky_lokalne.py`, používateľ ho spustí,
+  fotky z `fotky_receptov/` presuň do `img/`. Zoznam zostávajúcich placeholderov
+  udržiavaj v `img/_placeholders.txt`. Ak fotku pošle používateľ, ulož ju do
+  `img/<id>.jpg` a id zo zoznamu vymaž.
 - `noindex` meta ostáva na všetkých stránkach — web je poloverejný.
 - localStorage kľúče `recepty_fav` a `recepty_kosik` nemeniť (stratili by sa
   uložené obľúbené a košíky používateľov).

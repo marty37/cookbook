@@ -52,7 +52,7 @@ const RECEPTY = [
       }
     ],
     "obrazok": "img/pecene-donuty.jpg",
-    "zdroj": "instagram.com/lucia_koren",
+    "zdroj": "instagram.com/lucia_korenova",
     "url": "https://www.instagram.com/reel/Cq-2kKaujgV/",
     "pridane": "2026-07-16",
     "hladanie": "donuty donut šišky pečené jogurt čokoláda cukríky deti",
