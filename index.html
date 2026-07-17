@@ -5,23 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#c05621">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' https: data:; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta property="og:type" content="website">
 <meta property="og:title" content="🍲 Naše recepty">
 <meta property="og:description" content="Rodinná zbierka receptov — všetko na jednom mieste.">
 <link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="img/icon-192.png">
 <link rel="apple-touch-icon" href="img/icon-192.png">
 <title>Naše recepty</title>
 <style>
-  :root{--bg:#faf7f2;--card:#fff;--ink:#2d2a26;--muted:#8a8378;--accent:#c05621;--chip:#f0e9df;--chip-on:#c05621;}
+  :root{--bg:#faf7f2;--card:#fff;--ink:#2d2a26;--muted:#6f695e;--accent:#c05621;--chip:#f0e9df;--chip-on:#c05621;}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:Georgia,'Times New Roman',serif;background:var(--bg);color:var(--ink);}
   header{padding:36px 24px 4px;text-align:center}
   header h1{font-size:2.1rem;font-weight:400}
   header p{color:var(--muted);margin-top:6px;font-style:italic}
 
-  .searchwrap{position:sticky;top:0;z-index:20;background:var(--bg);padding:12px 24px 10px;max-width:1020px;margin:8px auto 0}
-  #search{width:100%;padding:12px 18px;font-size:1rem;border:1px solid #ddd4c8;border-radius:999px;background:#fff;font-family:inherit}
+  .searchwrap{position:sticky;top:0;z-index:20;background:var(--bg);padding:12px 24px 10px;max-width:1020px;margin:8px auto 0;display:flex;gap:8px}
+  #search{flex:1;min-width:0;padding:12px 18px;font-size:1rem;border:1px solid #ddd4c8;border-radius:999px;background:#fff;font-family:inherit}
   #search:focus{outline:2px solid var(--accent);border-color:transparent}
+  #ftoggle{font-family:system-ui,sans-serif;font-size:.88rem;border:1px solid #ddd4c8;background:#fff;border-radius:999px;padding:0 16px;cursor:pointer;white-space:nowrap;color:var(--ink)}
+  #ftoggle:hover{border-color:var(--accent)}
+  #ftoggle .fcnt{background:var(--accent);color:#fff;border-radius:999px;padding:1px 8px;font-size:.75rem;margin-left:5px}
+  #facets.zatvorene{display:none}
 
   .toolbar{max-width:1020px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:14px}
   .tabs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;border-bottom:2px solid var(--chip);padding-bottom:10px}
@@ -35,6 +41,19 @@
   .chip:disabled{opacity:.3;cursor:default}
   .cnt{opacity:.55;font-size:.75em;margin-left:3px}
   @media (pointer:coarse){.chip{padding:9px 15px;font-size:.85rem}.tab{padding:10px 17px}}
+  @media (max-width:700px){
+    header{padding:24px 16px 0}
+    header h1{font-size:1.7rem}
+    .searchwrap{padding:10px 16px 8px}
+    .toolbar,.statusbar{padding:0 16px}
+    .grid{padding:0 16px;gap:16px}
+    .tabs{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:8px;scrollbar-width:none}
+    .tabs::-webkit-scrollbar{display:none}
+    .tab{flex:0 0 auto;white-space:nowrap}
+    .facet{padding:10px 0;border-bottom:1px dashed #e5ddd0}
+    .facet:last-child{border-bottom:none}
+    .facet .lbl{width:100%;margin-bottom:2px}
+  }
 
   .statusbar{max-width:1020px;margin:16px auto 0;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:system-ui,sans-serif;font-size:.8rem;color:var(--muted)}
   .statusbar .actions{display:flex;gap:8px}
@@ -60,7 +79,25 @@
   .star{position:absolute;top:10px;right:10px;font-size:1.25rem;background:rgba(255,255,255,.88);border:none;border-radius:50%;width:38px;height:38px;cursor:pointer;line-height:1;z-index:2}
   .badge-cas{position:absolute;top:10px;left:10px;font-family:system-ui,sans-serif;font-size:.72rem;background:rgba(255,255,255,.9);border-radius:999px;padding:4px 10px}
   .empty{text-align:center;color:var(--muted);padding:48px;display:none;grid-column:1/-1;font-style:italic}
+  .grphead{grid-column:1/-1;font-size:1.3rem;font-weight:500;margin:10px 0 -8px;display:flex;align-items:center;gap:12px}
+  .grphead::after{content:"";flex:1;height:2px;background:var(--chip);border-radius:2px}
   footer{text-align:center;color:var(--muted);font-size:.8rem;padding:0 0 100px;font-family:system-ui,sans-serif}
+
+  /* tmavý režim — podľa nastavenia systému */
+  @media (prefers-color-scheme: dark){
+    :root{--bg:#1f1c18;--card:#2b2723;--ink:#ece7df;--muted:#a59d90;--chip:#3a352e;--chip-on:#c05621;}
+    #search,#ftoggle,.btn,.iconbtn{background:var(--card);border-color:#4a443c;color:var(--ink)}
+    .tag{color:#c9c1b2}
+    .tag.chod{background:#453f37}
+    .tag.stav{background:#2f3a2c;color:#a8c79c}
+    .star,.badge-cas{background:rgba(43,39,35,.9)}
+    .card{box-shadow:0 1px 4px rgba(0,0,0,.45)}
+    .tab.on{background:#ece7df;color:#1f1c18}
+    .facet{border-color:#3a352e}
+    #modal{background:var(--card)}
+    #modal li{border-color:#4a443c}
+    #modal .ghost{border-color:#4a443c;color:var(--ink)}
+  }
 
   /* košík — spodná lišta */
   #cartbar{position:fixed;left:0;right:0;bottom:0;background:var(--ink);color:#fff;display:none;z-index:30}
@@ -91,7 +128,10 @@
   <p>zbierka receptov zo Signalu — všetko na jednom mieste</p>
 </header>
 
-<div class="searchwrap"><input id="search" type="search" placeholder="Hľadať recept alebo ingredienciu…"></div>
+<div class="searchwrap">
+  <input id="search" type="search" placeholder="Hľadať recept alebo ingredienciu…" aria-label="Hľadať recept alebo ingredienciu">
+  <button id="ftoggle" aria-expanded="true" aria-controls="facets">⚙ Filtre<span class="fcnt" id="fcnt" hidden></span></button>
+</div>
 
 <div class="toolbar">
   <div class="tabs" id="tabs"></div>
@@ -118,7 +158,7 @@
   </span>
 </div></div>
 
-<div id="overlay"><div id="modal">
+<div id="overlay"><div id="modal" role="dialog" aria-modal="true" aria-label="Nákupný zoznam">
   <h3>🛒 Nákupný zoznam</h3>
   <div class="sub" id="msub"></div>
   <label><input type="checkbox" id="mspajza"> zahrnúť aj bežné suroviny (soľ, voda, olej…)</label>
@@ -207,29 +247,44 @@ function render(){
   rowF.appendChild(mkBtn("chip","⭐ obľúbené",[...fav].length,stav.fav,()=>{stav.fav=!stav.fav;render();}));
   facetsEl.appendChild(rowF);
 
-  /* karty */
-  gridEl.querySelectorAll(".card").forEach(e=>e.remove());
+  /* karty — pri "Všetko" zoskupené pod nadpisy chodov */
+  gridEl.querySelectorAll(".card,.grphead").forEach(e=>e.remove());
   const vysledky=RECEPTY.filter(r=>vyhovuje(r)).sort((a,b)=>b.pridane.localeCompare(a.pridane));
-  vysledky.forEach(r=>gridEl.insertBefore(karta(r),emptyEl));
+  if(!stav.chod){
+    SLOVNIK.chod.forEach(ch=>{
+      const skupina=vysledky.filter(r=>r.chod===ch);
+      if(!skupina.length)return;
+      const h=document.createElement("h2");h.className="grphead";h.textContent=ch;
+      gridEl.insertBefore(h,emptyEl);
+      skupina.forEach(r=>gridEl.insertBefore(karta(r),emptyEl));
+    });
+  }else{
+    vysledky.forEach(r=>gridEl.insertBefore(karta(r),emptyEl));
+  }
   emptyEl.style.display=vysledky.length?"none":"block";
 
   el("count").textContent=vysledky.length+" z "+RECEPTY.length+" receptov";
   el("reset").style.display=(stav.chod||stav.dieta.size||stav.surovina.size||stav.prakticke.size||stav.stavy.size||stav.cas||stav.fav||stav.q)?"inline":"none";
+
+  /* badge počtu aktívnych filtrov na tlačidle Filtre */
+  const aktivne=stav.dieta.size+stav.surovina.size+stav.prakticke.size+stav.stavy.size+(stav.cas?1:0)+(stav.fav?1:0);
+  el("fcnt").textContent=aktivne; el("fcnt").hidden=!aktivne;
   renderCartbar();
 }
 
 function mkRow(lbl){const d=document.createElement("div");d.className="facet";
   const s=document.createElement("span");s.className="lbl";s.textContent=lbl;d.appendChild(s);return d;}
 function mkBtn(cls,txt,n,on,fn){const b=document.createElement("button");b.className=cls+(on?" on":"");
+  b.setAttribute("aria-pressed",on?"true":"false");
   b.innerHTML=esc(txt)+(n!=null?' <span class="cnt">'+n+"</span>":"");b.onclick=fn;return b;}
 
 function karta(r){
   const d=document.createElement("div");d.className="card";
   d.innerHTML=
-    '<button class="star" title="obľúbené">'+(fav.has(r.id)?"⭐":"☆")+'</button>'+
-    '<a class="cover" href="'+r.id+'.html">'+
+    '<button class="star" aria-label="obľúbený recept" aria-pressed="'+(fav.has(r.id)?"true":"false")+'">'+(fav.has(r.id)?"⭐":"☆")+'</button>'+
+    '<a class="cover" href="'+esc(r.id)+'.html">'+
       '<span class="badge-cas">⏱️ '+r.cas+" min</span>"+
-      '<img src="'+r.obrazok+'" alt="" loading="lazy">'+
+      '<img src="'+esc(r.obrazok)+'" alt="'+esc(r.nazov)+'" loading="lazy">'+
       '<div class="body"><h2>'+esc(r.nazov)+"</h2>"+
       '<div class="tags"><span class="tag chod">'+esc(r.chod)+"</span>"+
       '<span class="tag stav">'+(STAVY.find(x=>x[0]===r.stav)||["",""])[1]+" "+esc(r.stav)+"</span>"+
@@ -253,6 +308,7 @@ el("cartclear").onclick=()=>{kosik.clear();ulozKosik();render();};
 el("cartshow").onclick=()=>{renderModal();el("overlay").style.display="block";};
 el("mclose").onclick=()=>el("overlay").style.display="none";
 el("overlay").onclick=e=>{if(e.target.id==="overlay")el("overlay").style.display="none";};
+document.addEventListener("keydown",e=>{if(e.key==="Escape")el("overlay").style.display="none";});
 el("mspajza").onchange=renderModal;
 
 function vybrane(){return RECEPTY.filter(r=>kosik.has(r.id));}
@@ -275,6 +331,18 @@ el("mcopy").onclick=()=>{
 };
 
 /* ===== ostatné ovládanie ===== */
+/* skladacie filtre — na mobile default zatvorené, voľba sa pamätá */
+let filtreOtvorene=localStorage.getItem("recepty_filtre")!==null
+  ? localStorage.getItem("recepty_filtre")==="1"
+  : window.innerWidth>700;
+function aplikujFpanel(){
+  facetsEl.classList.toggle("zatvorene",!filtreOtvorene);
+  el("ftoggle").setAttribute("aria-expanded",filtreOtvorene?"true":"false");
+}
+el("ftoggle").onclick=()=>{filtreOtvorene=!filtreOtvorene;
+  localStorage.setItem("recepty_filtre",filtreOtvorene?"1":"0");aplikujFpanel();};
+aplikujFpanel();
+
 el("search").addEventListener("input",e=>{stav.q=e.target.value.toLowerCase().trim();render();});
 el("reset").onclick=()=>{stav={chod:null,dieta:new Set(),surovina:new Set(),prakticke:new Set(),stavy:new Set(),cas:null,fav:false,q:""};el("search").value="";render();};
 el("random").onclick=()=>{
@@ -288,6 +356,14 @@ render();
 
 /* PWA — service worker (funguje len cez https / na GitHub Pages) */
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+
+/* pull-to-refresh v nainštalovanej PWA */
+if(matchMedia("(display-mode: standalone)").matches){
+  let startY=0,tahame=false;
+  addEventListener("touchstart",e=>{if(scrollY===0){startY=e.touches[0].clientY;tahame=true;}},{passive:true});
+  addEventListener("touchmove",e=>{if(tahame&&e.touches[0].clientY-startY>90){tahame=false;location.reload();}},{passive:true});
+  addEventListener("touchend",()=>tahame=false,{passive:true});
+}
 </script>
 </body>
 </html>

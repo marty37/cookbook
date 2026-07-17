@@ -17,14 +17,16 @@ SABLONA = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#c05621">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' https: data:; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta property="og:type" content="article">
 <meta property="og:title" content="{emoji} {nazov}">
 <meta property="og:description" content="{ogpopis}">
 <meta property="og:image" content="{obrazok}">
 <link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="img/icon-192.png">
 <title>{nazov}</title>
 <style>
-  :root{{--bg:#faf7f2;--card:#fff;--ink:#2d2a26;--muted:#8a8378;--accent:#c05621;--chip:#f0e9df;}}
+  :root{{--bg:#faf7f2;--card:#fff;--ink:#2d2a26;--muted:#6f695e;--accent:#c05621;--chip:#f0e9df;}}
   *{{box-sizing:border-box;margin:0;padding:0}}
   body{{font-family:Georgia,'Times New Roman',serif;background:var(--bg);color:var(--ink);line-height:1.65}}
   .wrap{{max-width:720px;margin:0 auto;padding:32px 24px 64px}}
@@ -39,6 +41,7 @@ SABLONA = """<!DOCTYPE html>
   h2{{font-size:1.15rem;font-weight:600;margin:28px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--chip)}}
   ul.ing{{list-style:none}}
   ul.ing li{{padding:9px 0;border-bottom:1px dashed #e5ddd0;display:flex;gap:10px;align-items:baseline}}
+  ul.ing li label{{display:flex;gap:10px;align-items:baseline;cursor:pointer;width:100%}}
   ul.ing input{{accent-color:var(--accent);transform:translateY(2px)}}
   ol.steps{{counter-reset:s;list-style:none}}
   ol.steps li{{counter-increment:s;position:relative;padding:0 0 18px 46px}}
@@ -49,6 +52,18 @@ SABLONA = """<!DOCTYPE html>
   .actions{{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 4px}}
   .abtn{{font-family:system-ui,sans-serif;font-size:.83rem;padding:9px 16px;border-radius:999px;border:1px solid #ddd4c8;background:#fff;cursor:pointer;color:var(--ink);text-decoration:none;display:inline-block}}
   .abtn:hover{{border-color:var(--accent)}}
+  @media (prefers-color-scheme: dark){{
+    :root{{--bg:#1f1c18;--card:#2b2723;--ink:#ece7df;--muted:#a59d90;--chip:#3a352e;}}
+    .tag{{color:#c9c1b2}}
+    .lead{{color:#b8b0a2}}
+    .tip{{background:#38301f}}
+    .abtn{{background:var(--card);border-color:#4a443c;color:var(--ink)}}
+    ul.ing li{{border-color:#4a443c}}
+    .facts{{box-shadow:none;border:1px solid #3a352e}}
+  }}
+  body.kuchyna ol.steps li{{font-size:1.2rem;line-height:1.75;padding-bottom:24px}}
+  body.kuchyna ul.ing{{font-size:1.15rem}}
+  .abtn.on{{background:var(--accent);border-color:var(--accent);color:#fff}}
   @media print{{.back,.actions{{display:none}}body{{background:#fff}}.hero{{max-height:240px}}.facts{{box-shadow:none;border:1px solid #eee}}}}
 </style>
 </head>
@@ -78,6 +93,7 @@ SABLONA = """<!DOCTYPE html>
 {tipy}
   <div class="actions">
     <button class="abtn" id="copyIng">📋 Kopírovať suroviny (pre Rohlík)</button>
+    <button class="abtn" id="kuchyna">🍳 Kuchynský režim</button>
 {videobtn}    <button class="abtn" id="share">🔗 Zdieľať</button>
     <button class="abtn" onclick="window.print()">🖨️ Vytlačiť</button>
   </div>
@@ -97,6 +113,14 @@ document.getElementById("share").onclick=e=>{{
   else navigator.clipboard.writeText(d.url).then(()=>{{e.target.textContent="✓ Link skopírovaný";
     setTimeout(()=>e.target.textContent="🔗 Zdieľať",1800);}});
 }};
+const kb=document.getElementById("kuchyna");let wakeLock=null,kuchynaZap=false;
+async function wlReq(){{try{{wakeLock=await navigator.wakeLock.request("screen");}}catch(e){{}}}}
+kb.onclick=()=>{{kuchynaZap=!kuchynaZap;
+  document.body.classList.toggle("kuchyna",kuchynaZap);
+  kb.classList.toggle("on",kuchynaZap);
+  kb.textContent=kuchynaZap?"✓ Kuchynský režim":"🍳 Kuchynský režim";
+  if(kuchynaZap)wlReq();else if(wakeLock){{wakeLock.release();wakeLock=null;}}}};
+document.addEventListener("visibilitychange",()=>{{if(kuchynaZap&&document.visibilityState==="visible")wlReq();}});
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{{}});
 </script>
 </body>
@@ -133,12 +157,12 @@ def stranka(r):
     e = html.escape
     tagy = "".join(f'<span class="tag">{e(t)}</span>' for t in [r["chod"], *r["dieta"], *r["prakticke"]])
     fakty = "".join(f"<span>{f[0].split(' ')[0]} <strong>{e(' '.join(f[0].split(' ')[1:]))}:</strong> {e(f[1])}</span>" for f in r["fakty"])
-    sur = "\n".join(f'    <li><input type="checkbox"><span>{s["t"]}</span></li>' for s in r["suroviny"])
+    sur = "\n".join(f'    <li><label><input type="checkbox"><span>{e(s["t"])}</span></label></li>' for s in r["suroviny"])
     kroky = "\n".join(f"    <li>{e(k)}</li>" for k in r["kroky"])
     tipy = "".join(f'  <div class="tip">💡 {e(t)}</div>\n' for t in r.get("tipy",[]))
-    video = f'    <a class="abtn" href="{e(r["video"])}" target="_blank">▶️ Pozrieť video</a>\n' if r.get("video") else ""
+    video = f'    <a class="abtn" href="{e(r["video"])}" target="_blank" rel="noopener">▶️ Pozrieť video</a>\n' if r.get("video") else ""
     if r.get("url"):
-        zdroj = f'<a href="{e(r["url"])}" target="_blank">{e(r["zdrojText"])}</a>'
+        zdroj = f'<a href="{e(r["url"])}" target="_blank" rel="noopener">{e(r["zdrojText"])}</a>'
     else:
         zdroj = e(r["zdrojText"])
     return SABLONA.format(

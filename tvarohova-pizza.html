@@ -5,14 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#c05621">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' https: data:; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta property="og:type" content="article">
 <meta property="og:title" content="🍕 Tvarohová pizza — rýchle cesto bez kysnutia">
 <meta property="og:description" content="Cesto z tvarohu, špaldovky a vajca — bez kysnutia, hotové do 25 minút. Obľúbená detská večera.">
 <meta property="og:image" content="img/tvarohova-pizza.jpg">
 <link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="img/icon-192.png">
 <title>Tvarohová pizza — rýchle cesto bez kysnutia</title>
 <style>
-  :root{--bg:#faf7f2;--card:#fff;--ink:#2d2a26;--muted:#8a8378;--accent:#c05621;--chip:#f0e9df;}
+  :root{--bg:#faf7f2;--card:#fff;--ink:#2d2a26;--muted:#6f695e;--accent:#c05621;--chip:#f0e9df;}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:Georgia,'Times New Roman',serif;background:var(--bg);color:var(--ink);line-height:1.65}
   .wrap{max-width:720px;margin:0 auto;padding:32px 24px 64px}
@@ -27,6 +29,7 @@
   h2{font-size:1.15rem;font-weight:600;margin:28px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--chip)}
   ul.ing{list-style:none}
   ul.ing li{padding:9px 0;border-bottom:1px dashed #e5ddd0;display:flex;gap:10px;align-items:baseline}
+  ul.ing li label{display:flex;gap:10px;align-items:baseline;cursor:pointer;width:100%}
   ul.ing input{accent-color:var(--accent);transform:translateY(2px)}
   ol.steps{counter-reset:s;list-style:none}
   ol.steps li{counter-increment:s;position:relative;padding:0 0 18px 46px}
@@ -37,6 +40,21 @@
   .actions{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 4px}
   .abtn{font-family:system-ui,sans-serif;font-size:.83rem;padding:9px 16px;border-radius:999px;border:1px solid #ddd4c8;background:#fff;cursor:pointer;color:var(--ink)}
   .abtn:hover{border-color:var(--accent)}
+
+  /* tmavý režim — podľa nastavenia systému */
+  @media (prefers-color-scheme: dark){
+    :root{--bg:#1f1c18;--card:#2b2723;--ink:#ece7df;--muted:#a59d90;--chip:#3a352e;}
+    .tag{color:#c9c1b2}
+    .lead{color:#b8b0a2}
+    .tip{background:#38301f}
+    .abtn{background:var(--card);border-color:#4a443c;color:var(--ink)}
+    ul.ing li{border-color:#4a443c}
+    .facts{box-shadow:none;border:1px solid #3a352e}
+  }
+  /* kuchynský režim — väčšie písmo pri varení */
+  body.kuchyna ol.steps li{font-size:1.2rem;line-height:1.75;padding-bottom:24px}
+  body.kuchyna ul.ing{font-size:1.15rem}
+  .abtn.on{background:var(--accent);border-color:var(--accent);color:#fff}
   @media print{.back,.actions{display:none}body{background:#fff}.hero{max-height:240px}.facts{box-shadow:none;border:1px solid #eee}}
 </style>
 </head>
@@ -59,15 +77,15 @@
 
   <h2>Suroviny</h2>
   <ul class="ing">
-    <li><input type="checkbox"><span>250 g <strong>tvarohu</strong> (vanička)</span></li>
-    <li><input type="checkbox"><span>70 g jemnej <strong>špaldovej múky</strong> (špaldovky)</span></li>
-    <li><input type="checkbox"><span>1 <strong>vajce</strong></span></li>
-    <li><input type="checkbox"><span><strong>rajčinový pretlak</strong></span></li>
-    <li><input type="checkbox"><span><strong>šunka</strong></span></li>
-    <li><input type="checkbox"><span><strong>mozzarella</strong></span></li>
-    <li><input type="checkbox"><span><strong>paprika</strong></span></li>
-    <li><input type="checkbox"><span><strong>šampiňóny</strong></span></li>
-    <li><input type="checkbox"><span><strong>gouda</strong></span></li>
+    <li><label><input type="checkbox"><span>250 g <strong>tvarohu</strong> (vanička)</span></label></li>
+    <li><label><input type="checkbox"><span>70 g jemnej <strong>špaldovej múky</strong> (špaldovky)</span></label></li>
+    <li><label><input type="checkbox"><span>1 <strong>vajce</strong></span></label></li>
+    <li><label><input type="checkbox"><span><strong>rajčinový pretlak</strong></span></label></li>
+    <li><label><input type="checkbox"><span><strong>šunka</strong></span></label></li>
+    <li><label><input type="checkbox"><span><strong>mozzarella</strong></span></label></li>
+    <li><label><input type="checkbox"><span><strong>paprika</strong></span></label></li>
+    <li><label><input type="checkbox"><span><strong>šampiňóny</strong></span></label></li>
+    <li><label><input type="checkbox"><span><strong>gouda</strong></span></label></li>
   </ul>
 
   <h2>Postup</h2>
@@ -83,6 +101,7 @@
 
   <div class="actions">
     <button class="abtn" id="copyIng">📋 Kopírovať suroviny (pre Rohlík)</button>
+    <button class="abtn" id="kuchyna">🍳 Kuchynský režim</button>
     <button class="abtn" id="share">🔗 Zdieľať</button>
     <button class="abtn" onclick="window.print()">🖨️ Vytlačiť</button>
   </div>
@@ -102,6 +121,14 @@ document.getElementById("share").onclick=e=>{
   else navigator.clipboard.writeText(d.url).then(()=>{e.target.textContent="✓ Link skopírovaný";
     setTimeout(()=>e.target.textContent="🔗 Zdieľať",1800);});
 };
+const kb=document.getElementById("kuchyna");let wakeLock=null,kuchynaZap=false;
+async function wlReq(){try{wakeLock=await navigator.wakeLock.request("screen");}catch(e){}}
+kb.onclick=()=>{kuchynaZap=!kuchynaZap;
+  document.body.classList.toggle("kuchyna",kuchynaZap);
+  kb.classList.toggle("on",kuchynaZap);
+  kb.textContent=kuchynaZap?"\u2713 Kuchynsk\u00fd re\u017eim":"\ud83c\udf73 Kuchynsk\u00fd re\u017eim";
+  if(kuchynaZap)wlReq();else if(wakeLock){wakeLock.release();wakeLock=null;}};
+document.addEventListener("visibilitychange",()=>{if(kuchynaZap&&document.visibilityState==="visible")wlReq();});
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
 </script>
 </body>
