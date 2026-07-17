@@ -109,4 +109,13 @@ fotka alebo text. Postup:
 ## Nasadenie
 
 GitHub Pages z hlavnej vetvy. Po zmene: commit + push, Pages sa obnoví samo.
-Plán do budúcna: GitHub Action, ktorá pri builde stiahne hotlinkované fotky do `img/`.
+
+## Plán do budúcna (na výslovnú žiadosť používateľa)
+
+- **Generovanie jedálničkov** — keď zbierka narastie (~50+ receptov): týždenný
+  jedálniček zo zbierky (obedy/večere podľa chodov, striedanie surovín, preferovať
+  osvedčené recepty), plus generovanie desiat/svačiniek pre deti. Výstup: plán
+  dní + zlúčený nákupný zoznam pre Rohlík. Formou novej stránky alebo dávkovo
+  na požiadanie ("vygeneruj jedálniček na budúci týždeň").
+- Pri väčšom počte receptov spraviť revíziu kategórií podľa reálneho používania
+  filtrov (mŕtve kategórie zlúčiť/zrušiť, prehodnotiť "bez lepku" ako default).
