@@ -34,8 +34,9 @@
   .tab{font-family:system-ui,sans-serif;font-size:.88rem;padding:7px 15px;border-radius:999px;background:transparent;border:none;cursor:pointer;color:var(--ink)}
   .tab.on{background:var(--ink);color:#fff}
   .facets{display:flex;flex-direction:column;gap:8px}
-  .facet{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-  .facet .lbl{font-family:system-ui,sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);width:86px;flex-shrink:0}
+  .facet{display:flex;gap:6px;align-items:flex-start}
+  .facet .lbl{font-family:system-ui,sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);width:86px;flex-shrink:0;padding-top:7px}
+  .fchips{display:flex;flex-wrap:wrap;gap:6px;flex:1;min-width:0}
   .chip{font-family:system-ui,sans-serif;font-size:.8rem;padding:5px 13px;border-radius:999px;background:var(--chip);border:none;cursor:pointer;color:var(--ink)}
   .chip.on{background:var(--chip-on);color:#fff}
   .chip:disabled{opacity:.3;cursor:default}
@@ -50,7 +51,7 @@
     .tabs{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:8px;scrollbar-width:none}
     .tabs::-webkit-scrollbar{display:none}
     .tab{flex:0 0 auto;white-space:nowrap}
-    .facet{padding:10px 0;border-bottom:1px dashed #e5ddd0}
+    .facet{padding:10px 0;border-bottom:1px dashed #e5ddd0;flex-wrap:wrap}
     .facet:last-child{border-bottom:none}
     .facet .lbl{width:100%;margin-bottom:2px}
   }
@@ -125,7 +126,7 @@
 <body>
 <header>
   <h1>🍲 Naše recepty</h1>
-  <p>zbierka receptov zo Signalu — všetko na jednom mieste</p>
+  <p>zbierka receptov</p>
 </header>
 
 <div class="searchwrap">
@@ -220,7 +221,7 @@ function render(){
       const n=RECEPTY.filter(r=>r[f].includes(v)&&vyhovuje(r,f)).length;
       const b=mkBtn("chip",v,n,stav[f].has(v),()=>{stav[f].has(v)?stav[f].delete(v):stav[f].add(v);render();});
       if(n===0&&!stav[f].has(v))b.disabled=true;
-      row.appendChild(b);
+      row.chipsEl.appendChild(b);
     });
     if(any)facetsEl.appendChild(row);
   }
@@ -230,7 +231,7 @@ function render(){
     const n=RECEPTY.filter(r=>fn(r)&&vyhovuje(r,"cas")).length;
     const b=mkBtn("chip",lbl,n,stav.cas===lbl,()=>{stav.cas=stav.cas===lbl?null:lbl;render();});
     if(n===0&&stav.cas!==lbl)b.disabled=true;
-    rowC.appendChild(b);
+    rowC.chipsEl.appendChild(b);
   });
   facetsEl.appendChild(rowC);
   /* stav */
@@ -239,12 +240,12 @@ function render(){
     const n=RECEPTY.filter(r=>r.stav===s&&vyhovuje(r,"stavy")).length;
     const b=mkBtn("chip",ikona+" "+s,n,stav.stavy.has(s),()=>{stav.stavy.has(s)?stav.stavy.delete(s):stav.stavy.add(s);render();});
     if(n===0&&!stav.stavy.has(s))b.disabled=true;
-    rowS.appendChild(b);
+    rowS.chipsEl.appendChild(b);
   });
   facetsEl.appendChild(rowS);
   /* obľúbené */
   const rowF=mkRow("Moje");
-  rowF.appendChild(mkBtn("chip","⭐ obľúbené",[...fav].length,stav.fav,()=>{stav.fav=!stav.fav;render();}));
+  rowF.chipsEl.appendChild(mkBtn("chip","⭐ obľúbené",[...fav].length,stav.fav,()=>{stav.fav=!stav.fav;render();}));
   facetsEl.appendChild(rowF);
 
   /* karty — pri "Všetko" zoskupené pod nadpisy chodov */
@@ -273,7 +274,9 @@ function render(){
 }
 
 function mkRow(lbl){const d=document.createElement("div");d.className="facet";
-  const s=document.createElement("span");s.className="lbl";s.textContent=lbl;d.appendChild(s);return d;}
+  const s=document.createElement("span");s.className="lbl";s.textContent=lbl;d.appendChild(s);
+  const ch=document.createElement("div");ch.className="fchips";d.appendChild(ch);
+  d.chipsEl=ch;return d;}
 function mkBtn(cls,txt,n,on,fn){const b=document.createElement("button");b.className=cls+(on?" on":"");
   b.setAttribute("aria-pressed",on?"true":"false");
   b.innerHTML=esc(txt)+(n!=null?' <span class="cnt">'+n+"</span>":"");b.onclick=fn;return b;}
