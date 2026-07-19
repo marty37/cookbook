@@ -80,28 +80,12 @@
   .star{position:absolute;top:10px;right:10px;font-size:1.25rem;background:rgba(255,255,255,.88);border:none;border-radius:50%;width:38px;height:38px;cursor:pointer;line-height:1;z-index:2}
   .badge-cas{position:absolute;top:10px;left:10px;font-family:system-ui,sans-serif;font-size:.72rem;background:rgba(255,255,255,.9);border-radius:999px;padding:4px 10px}
   .empty{text-align:center;color:var(--muted);padding:48px;display:none;grid-column:1/-1;font-style:italic}
+  footer{text-align:center;color:var(--muted);font-size:.8rem;padding:0 0 100px;font-family:system-ui,sans-serif}
   .grphead{grid-column:1/-1;font-size:1.3rem;font-weight:500;margin:10px 0 -8px;display:flex;align-items:center;gap:12px}
   .grphead::after{content:"";flex:1;height:2px;background:var(--chip);border-radius:2px}
-  footer{text-align:center;color:var(--muted);font-size:.8rem;padding:0 0 100px;font-family:system-ui,sans-serif}
-
-  /* tmavý režim — podľa nastavenia systému */
-  @media (prefers-color-scheme: dark){
-    :root{--bg:#1f1c18;--card:#2b2723;--ink:#ece7df;--muted:#a59d90;--chip:#3a352e;--chip-on:#c05621;}
-    #search,#ftoggle,.btn,.iconbtn{background:var(--card);border-color:#4a443c;color:var(--ink)}
-    .tag{color:#c9c1b2}
-    .tag.chod{background:#453f37}
-    .tag.stav{background:#2f3a2c;color:#a8c79c}
-    .star,.badge-cas{background:rgba(43,39,35,.9)}
-    .card{box-shadow:0 1px 4px rgba(0,0,0,.45)}
-    .tab.on{background:#ece7df;color:#1f1c18}
-    .facet{border-color:#3a352e}
-    #modal{background:var(--card)}
-    #modal li{border-color:#4a443c}
-    #modal .ghost{border-color:#4a443c;color:var(--ink)}
-  }
 
   /* košík — spodná lišta */
-  #cartbar{position:fixed;left:0;right:0;bottom:0;background:var(--ink);color:#fff;display:none;z-index:30}
+  #cartbar{position:fixed;left:0;right:0;bottom:0;background:#26221e;color:#fff;display:none;z-index:30}
   #cartbar .inner{max-width:1020px;margin:0 auto;padding:13px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:system-ui,sans-serif;font-size:.9rem}
   #cartbar button{font-family:system-ui,sans-serif;padding:9px 18px;border-radius:999px;border:none;cursor:pointer}
   #cartbar .show{background:var(--accent);color:#fff;font-weight:600}
@@ -121,6 +105,23 @@
   #modal .primary{background:var(--accent);color:#fff;border:none;padding:10px 20px;border-radius:999px;cursor:pointer;font-weight:600}
   #modal .ghost{background:none;border:1px solid #ddd4c8;padding:10px 20px;border-radius:999px;cursor:pointer}
   #modal .hint{font-size:.78rem;color:var(--muted);margin-top:12px}
+
+  /* tmavý režim — podľa nastavenia systému (musí byť až za všetkými základnými pravidlami) */
+  @media (prefers-color-scheme: dark){
+    :root{--bg:#1f1c18;--card:#2b2723;--ink:#ece7df;--muted:#a59d90;--chip:#3a352e;--chip-on:#c05621;}
+    #search,#ftoggle,.btn,.iconbtn{background:var(--card);border-color:#4a443c;color:var(--ink)}
+    .tag{color:#c9c1b2}
+    .tag.chod{background:#453f37}
+    .tag.stav{background:#2f3a2c;color:#a8c79c}
+    .star,.badge-cas{background:rgba(43,39,35,.9)}
+    .card{box-shadow:0 1px 4px rgba(0,0,0,.45)}
+    .tab.on{background:#ece7df;color:#1f1c18}
+    .facet{border-color:#3a352e}
+    #cartbar{background:#0f0d0b}
+    #modal{background:var(--card);color:var(--ink)}
+    #modal li{border-color:#4a443c}
+    #modal .ghost{border-color:#4a443c;color:var(--ink)}
+  }
 </style>
 </head>
 <body>
@@ -149,7 +150,7 @@
 
 <main class="grid" id="grid"><div class="empty" id="empty">Nič sa nenašlo 🤷</div></main>
 
-<footer>Generované z liniek poslaných cez Signal · kategórie podľa <code>kategorie.json</code></footer>
+<footer>created by marty · 2026</footer>
 
 <div id="cartbar"><div class="inner">
   <span id="cartinfo"></span>
