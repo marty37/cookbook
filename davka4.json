@@ -1,0 +1,61 @@
+[
+{
+  "id":"livanecky-z-cottage","nazov":"Vláčne lievance z cottage s čučoriedkami","emoji":"🥞",
+  "chod":"raňajky/desiata","dieta":["bez lepku","vegetariánske"],"surovina":["tvaroh/syr","vajcia","ovocie"],"prakticke":["jedna panvica/hrniec"],
+  "stav":"nové","cas":25,"porcie":"2 porcie",
+  "lead":"Nadýchané lievance plné bielkovín — cottage, vajcia a čučoriedky, vďaka bezlepkovej múke úplne bez lepku.",
+  "fakty":[["⏱️ Celkovo","~25 min"],["🍳 Panvica",""],["🌾 Bez lepku","(s bezlepkovou múkou)"]],
+  "suroviny":[
+    {"t":"80 g bezlepkovej múky (napr. Nomix Nominal)"},
+    {"t":"180 g cottage syra"},
+    {"t":"2 vajíčka"},
+    {"t":"60 g mlieka"},
+    {"t":"15 g repkového oleja alebo rozpusteného masla","s":true},
+    {"t":"1 lyžička kypriaceho prášku"},
+    {"t":"80 g čučoriedok"},
+    {"t":"štipka soli","s":true},
+    {"t":"½ lyžičky mletej vanilky"}],
+  "kroky":[
+    "Cottage rozmixuj s vajíčkami a olejom na hladkú zmes.",
+    "Zmiešaj s múkou, kypriacim práškom, vanilkou a štipkou soli.",
+    "Postupne prilievaj mlieko a vymiešaj mierne husté cesto; nakoniec zľahka primiešaj čučoriedky.",
+    "Rozohrej panvicu s dostatočným množstvom oleja a opekaj lievance z oboch strán, kým nie sú úplne prepečené."],
+  "tipy":["Z komentárov: funguje aj hladká či špaldová múka v rovnakom pomere (vtedy ale lievance nie sú bezlepkové) — overené aj kombinácia hladká + pohánková."],
+  "obrazok":"img/livanecky-z-cottage.jpg","zdroj":"instagram.com/lzickacukru",
+  "url":"https://www.instagram.com/reel/DZRjft2MVcg/","video":"https://www.instagram.com/reel/DZRjft2MVcg/",
+  "pridane":"2026-07-19","hladanie":"lívance lívanečky cottage borůvky bezlepkové protein snídaně lzickacukru",
+  "metaAutor":"Instagram · @lzickacukru","zdrojText":"Instagram reel — @lzickacukru (spracované z popisku; ilustračný obrázok)"
+},
+{
+  "id":"ovocny-kolac-s-drobenkou","nazov":"Rýchly ovocný koláč s posýpkou","emoji":"🍑",
+  "chod":"dezert/sladké","dieta":["vegetariánske"],"surovina":["ovocie"],"prakticke":["z rúry"],
+  "stav":"nové","cas":35,"porcie":"1 plech",
+  "lead":"Koláč z relácie Všechno, co mám ráda — aj so spracovaním hotový za 35 minút. Cesto sa len uhnetie, obloží ovocím podľa chuti a zasype posýpkou.",
+  "fakty":[["⏱️ Celkovo","35 min (pečenie ~25 min)"],["🔥 Rúra","180 °C"],["📊 Náročnosť","ľahká"]],
+  "suroviny":[
+    {"t":"150 g hladkej múky (cesto)"},
+    {"t":"150 g polohrubej múky (cesto)"},
+    {"t":"40 g cukru (cesto)","s":true},
+    {"t":"1 vajce (cesto)"},
+    {"t":"štipka soli","s":true},
+    {"t":"21 g droždia (cesto)"},
+    {"t":"½ vrecka kypriaceho prášku (cesto)"},
+    {"t":"100 ml slnečnicového oleja (cesto)"},
+    {"t":"200 ml vlažnej vody","s":true},
+    {"t":"ovocie, tvarohová náplň alebo marmeláda na obloženie"},
+    {"t":"100 g masla (posýpka)"},
+    {"t":"100 g kryštálového cukru (posýpka)"},
+    {"t":"100 g polohrubej múky (posýpka)"}],
+  "kroky":[
+    "Všetky suroviny na cesto vlož do misy a uhneť v robote alebo vareškou.",
+    "Cesto rozotri na vymastený plech a poukladaj ovocie, tvarohovú náplň alebo marmeládu — čo komu chutí.",
+    "Z masla, cukru a múky spracuj posýpku a koláč ňou zasyp.",
+    "Peč vo vyhriatej rúre ~25 minút na 180 °C."],
+  "tipy":["Cesto sa nenecháva kysnúť — droždie s kypriacim práškom stihnú svoje počas pečenia, preto je koláč hotový za 35 minút."],
+  "obrazok":"https://img.ceskatelevize.cz/program/porady/12468683635/foto09/recepty/8864.jpg",
+  "zdroj":"ceskatelevize.cz",
+  "url":"https://www.ceskatelevize.cz/porady/12468683635-vsechno-co-mam-rada/11692-recepty/8864-rychly-ovocny-kolac-s-drobenkou/",
+  "pridane":"2026-07-19","hladanie":"ovocný koláč drobenka posýpka rychlý plech všechno co mám ráda ČT",
+  "metaAutor":"ČT — Všechno, co mám ráda","zdrojText":"ceskatelevize.cz — Rychlý ovocný koláč s drobenkou (Všechno, co mám ráda)"
+}
+]

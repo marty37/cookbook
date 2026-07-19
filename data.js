@@ -4,6 +4,129 @@
 
 const RECEPTY = [
   {
+    "id": "livanecky-z-cottage",
+    "nazov": "Vláčne lievance z cottage s čučoriedkami",
+    "chod": "raňajky/desiata",
+    "dieta": [
+      "bez lepku",
+      "vegetariánske"
+    ],
+    "surovina": [
+      "tvaroh/syr",
+      "vajcia",
+      "ovocie"
+    ],
+    "prakticke": [
+      "jedna panvica/hrniec"
+    ],
+    "stav": "nové",
+    "cas": 25,
+    "porcie": "2 porcie",
+    "suroviny": [
+      {
+        "t": "80 g bezlepkovej múky (napr. Nomix Nominal)"
+      },
+      {
+        "t": "180 g cottage syra"
+      },
+      {
+        "t": "2 vajíčka"
+      },
+      {
+        "t": "60 g mlieka"
+      },
+      {
+        "t": "15 g repkového oleja alebo rozpusteného masla",
+        "s": true
+      },
+      {
+        "t": "1 lyžička kypriaceho prášku"
+      },
+      {
+        "t": "80 g čučoriedok"
+      },
+      {
+        "t": "štipka soli",
+        "s": true
+      },
+      {
+        "t": "½ lyžičky mletej vanilky"
+      }
+    ],
+    "obrazok": "img/livanecky-z-cottage.jpg",
+    "zdroj": "instagram.com/lzickacukru",
+    "url": "https://www.instagram.com/reel/DZRjft2MVcg/",
+    "pridane": "2026-07-19",
+    "hladanie": "lívance lívanečky cottage borůvky bezlepkové protein snídaně lzickacukru",
+    "video": "https://www.instagram.com/reel/DZRjft2MVcg/"
+  },
+  {
+    "id": "ovocny-kolac-s-drobenkou",
+    "nazov": "Rýchly ovocný koláč s posýpkou",
+    "chod": "dezert/sladké",
+    "dieta": [
+      "vegetariánske"
+    ],
+    "surovina": [
+      "ovocie"
+    ],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 35,
+    "porcie": "1 plech",
+    "suroviny": [
+      {
+        "t": "150 g hladkej múky (cesto)"
+      },
+      {
+        "t": "150 g polohrubej múky (cesto)"
+      },
+      {
+        "t": "40 g cukru (cesto)",
+        "s": true
+      },
+      {
+        "t": "1 vajce (cesto)"
+      },
+      {
+        "t": "štipka soli",
+        "s": true
+      },
+      {
+        "t": "21 g droždia (cesto)"
+      },
+      {
+        "t": "½ vrecka kypriaceho prášku (cesto)"
+      },
+      {
+        "t": "100 ml slnečnicového oleja (cesto)"
+      },
+      {
+        "t": "200 ml vlažnej vody",
+        "s": true
+      },
+      {
+        "t": "ovocie, tvarohová náplň alebo marmeláda na obloženie"
+      },
+      {
+        "t": "100 g masla (posýpka)"
+      },
+      {
+        "t": "100 g kryštálového cukru (posýpka)"
+      },
+      {
+        "t": "100 g polohrubej múky (posýpka)"
+      }
+    ],
+    "obrazok": "https://img.ceskatelevize.cz/program/porady/12468683635/foto09/recepty/8864.jpg",
+    "zdroj": "ceskatelevize.cz",
+    "url": "https://www.ceskatelevize.cz/porady/12468683635-vsechno-co-mam-rada/11692-recepty/8864-rychly-ovocny-kolac-s-drobenkou/",
+    "pridane": "2026-07-19",
+    "hladanie": "ovocný koláč drobenka posýpka rychlý plech všechno co mám ráda ČT"
+  },
+  {
     "id": "pecene-donuty",
     "nazov": "Domáce pečené donuty s čokoládou",
     "chod": "dezert/sladké",
