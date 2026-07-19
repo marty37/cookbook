@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#c05621">
+<meta name="theme-color" content="#b0355c">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' https: data:; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta property="og:type" content="article">
 <meta property="og:title" content="🌾 Chia krekry so semienkami">
@@ -14,7 +14,7 @@
 <link rel="icon" type="image/png" href="img/icon-192.png">
 <title>Chia krekry so semienkami</title>
 <style>
-  :root{--bg:#faf7f2;--card:#fff;--ink:#2d2a26;--muted:#6f695e;--accent:#c05621;--chip:#f0e9df;}
+  :root{--bg:#fbf6f7;--card:#fff;--ink:#2d2a26;--muted:#6c6266;--accent:#b0355c;--chip:#f3e3e9;}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:Georgia,'Times New Roman',serif;background:var(--bg);color:var(--ink);line-height:1.65}
   .wrap{max-width:720px;margin:0 auto;padding:32px 24px 64px}
@@ -22,34 +22,35 @@
   h1{font-size:2rem;font-weight:500;margin:16px 0 10px;line-height:1.25}
   .meta{font-family:system-ui,sans-serif;font-size:.8rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:6px}
   .tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 20px}
-  .tag{font-family:system-ui,sans-serif;font-size:.72rem;padding:4px 11px;border-radius:999px;background:var(--chip);color:#6b6357}
+  .tag{font-family:system-ui,sans-serif;font-size:.72rem;padding:4px 11px;border-radius:999px;background:var(--chip);color:#6d5560}
   .hero{width:100%;border-radius:14px;margin:6px 0 22px;max-height:420px;object-fit:cover}
-  .lead{font-style:italic;color:#5a5347;margin-bottom:26px}
+  .lead{font-style:italic;color:#5d4a54;margin-bottom:26px}
   .facts{font-family:system-ui,sans-serif;font-size:.85rem;background:var(--card);border-radius:12px;padding:14px 18px;display:flex;gap:24px;flex-wrap:wrap;margin-bottom:30px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
   h2{font-size:1.15rem;font-weight:600;margin:28px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--chip)}
   ul.ing{list-style:none}
-  ul.ing li{padding:9px 0;border-bottom:1px dashed #e5ddd0;display:flex;gap:10px;align-items:baseline}
+  ul.ing li{padding:9px 0;border-bottom:1px dashed #e8dae1;display:flex;gap:10px;align-items:baseline}
   ul.ing li label{display:flex;gap:10px;align-items:baseline;cursor:pointer;width:100%}
   ul.ing input{accent-color:var(--accent);transform:translateY(2px)}
   ol.steps{counter-reset:s;list-style:none}
   ol.steps li{counter-increment:s;position:relative;padding:0 0 18px 46px}
   ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-family:system-ui,sans-serif;font-size:.85rem;display:flex;align-items:center;justify-content:center}
-  .tip{background:#fdf3e7;border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0;font-size:.95rem}
+  .tip{background:#fbeef3;border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0;font-size:.95rem}
   .source{margin-top:36px;font-family:system-ui,sans-serif;font-size:.82rem;color:var(--muted)}
   .source a{color:var(--accent)}
   .actions{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 4px}
-  .abtn{font-family:system-ui,sans-serif;font-size:.83rem;padding:9px 16px;border-radius:999px;border:1px solid #ddd4c8;background:#fff;cursor:pointer;color:var(--ink);text-decoration:none;display:inline-block}
+  .abtn{font-family:system-ui,sans-serif;font-size:.83rem;padding:9px 16px;border-radius:999px;border:1px solid #e2d3da;background:#fff;cursor:pointer;color:var(--ink);text-decoration:none;display:inline-block}
   .abtn:hover{border-color:var(--accent)}
 
   /* tmavý režim — podľa nastavenia systému */
   @media (prefers-color-scheme: dark){
-    :root{--bg:#1f1c18;--card:#2b2723;--ink:#ece7df;--muted:#a59d90;--chip:#3a352e;}
-    .tag{color:#c9c1b2}
-    .lead{color:#b8b0a2}
-    .tip{background:#38301f}
-    .abtn{background:var(--card);border-color:#4a443c;color:var(--ink)}
-    ul.ing li{border-color:#4a443c}
-    .facts{box-shadow:none;border:1px solid #3a352e}
+    :root{--bg:#211a1e;--card:#2d242a;--ink:#efe6ea;--muted:#a89aa1;--chip:#3b2e35;}
+    .tag{color:#cbb9c2}
+    .lead{color:#bcaab4}
+    .tip{background:#3a2531}
+    .abtn{background:var(--card);border-color:#4c3d45;color:var(--ink)}
+    ul.ing li{border-color:#4c3d45}
+    .facts{box-shadow:none;border:1px solid #3b2e35}
+    .back,.source a{color:#e58fae}
   }
   /* kuchynský režim — väčšie písmo pri varení */
   body.kuchyna ol.steps li{font-size:1.2rem;line-height:1.75;padding-bottom:24px}
@@ -107,8 +108,8 @@
 <script>
 document.getElementById("copyIng").onclick=e=>{
   e.target.style.minWidth=e.target.offsetWidth+"px";
-  const t="Nákupný zoznam ("+document.querySelector("h1").textContent.trim()+"):\n"+
-    [...document.querySelectorAll("ul.ing li span")].map(s=>"- "+s.textContent.trim()).join("\n");
+  const t="Nakúp mi prosím suroviny na recept "+document.querySelector("h1").textContent.trim()+":\n"+
+    [...document.querySelectorAll("ul.ing li span")].map(s=>"- "+s.textContent.trim()).join("\n")+"\nAk niečo nie je dostupné, navrhni najbližšiu alternatívu.";
   navigator.clipboard.writeText(t).then(()=>{e.target.textContent="✓ Skopírované";
     setTimeout(()=>e.target.textContent="📋 Kopírovať suroviny (pre Rohlík)",1800);});
 };

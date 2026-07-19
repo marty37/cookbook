@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#c05621">
+<meta name="theme-color" content="#b0355c">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' https: data:; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta property="og:type" content="website">
 <meta property="og:title" content="🍲 Naše recepty">
@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="img/icon-192.png">
 <title>Naše recepty</title>
 <style>
-  :root{--bg:#faf7f2;--card:#fff;--ink:#2d2a26;--muted:#6f695e;--accent:#c05621;--chip:#f0e9df;--chip-on:#c05621;}
+  :root{--bg:#fbf6f7;--card:#fff;--ink:#2d2a26;--muted:#6c6266;--accent:#b0355c;--chip:#f3e3e9;--chip-on:#b0355c;}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:Georgia,'Times New Roman',serif;background:var(--bg);color:var(--ink);}
   header{padding:36px 24px 4px;text-align:center}
@@ -22,9 +22,9 @@
   header p{color:var(--muted);margin-top:6px;font-style:italic}
 
   .searchwrap{position:sticky;top:0;z-index:20;background:var(--bg);padding:12px 24px 10px;max-width:1020px;margin:8px auto 0;display:flex;gap:8px}
-  #search{flex:1;min-width:0;padding:12px 18px;font-size:1rem;border:1px solid #ddd4c8;border-radius:999px;background:#fff;font-family:inherit}
+  #search{flex:1;min-width:0;padding:12px 18px;font-size:1rem;border:1px solid #e2d3da;border-radius:999px;background:#fff;font-family:inherit}
   #search:focus{outline:2px solid var(--accent);border-color:transparent}
-  #ftoggle{font-family:system-ui,sans-serif;font-size:.88rem;border:1px solid #ddd4c8;background:#fff;border-radius:999px;padding:0 16px;cursor:pointer;white-space:nowrap;color:var(--ink)}
+  #ftoggle{font-family:system-ui,sans-serif;font-size:.88rem;border:1px solid #e2d3da;background:#fff;border-radius:999px;padding:0 16px;cursor:pointer;white-space:nowrap;color:var(--ink)}
   #ftoggle:hover{border-color:var(--accent)}
   #ftoggle .fcnt{background:var(--accent);color:#fff;border-radius:999px;padding:1px 8px;font-size:.75rem;margin-left:5px}
   #facets.zatvorene{display:none}
@@ -51,14 +51,14 @@
     .tabs{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:8px;scrollbar-width:none}
     .tabs::-webkit-scrollbar{display:none}
     .tab{flex:0 0 auto;white-space:nowrap}
-    .facet{padding:10px 0;border-bottom:1px dashed #e5ddd0;flex-wrap:wrap}
+    .facet{padding:10px 0;border-bottom:1px dashed #e8dae1;flex-wrap:wrap}
     .facet:last-child{border-bottom:none}
     .facet .lbl{width:100%;margin-bottom:2px}
   }
 
   .statusbar{max-width:1020px;margin:16px auto 0;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:system-ui,sans-serif;font-size:.8rem;color:var(--muted)}
   .statusbar .actions{display:flex;gap:8px}
-  .btn{font-family:system-ui,sans-serif;font-size:.8rem;padding:7px 14px;border-radius:999px;border:1px solid #ddd4c8;background:#fff;cursor:pointer;color:var(--ink)}
+  .btn{font-family:system-ui,sans-serif;font-size:.8rem;padding:7px 14px;border-radius:999px;border:1px solid #e2d3da;background:#fff;cursor:pointer;color:var(--ink)}
   .btn:hover{border-color:var(--accent)}
   #reset{background:none;border:none;color:var(--accent);cursor:pointer;font-size:.8rem;text-decoration:underline;display:none}
 
@@ -70,12 +70,12 @@
   .card .body{padding:15px 17px 15px;display:flex;flex-direction:column;gap:8px;flex:1}
   .card h2{font-size:1.06rem;font-weight:600;line-height:1.35;padding-right:30px}
   .card .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto}
-  .tag{font-family:system-ui,sans-serif;font-size:.68rem;padding:3px 9px;border-radius:999px;background:var(--chip);color:#6b6357}
-  .tag.chod{background:#e8e2d6;font-weight:600}
+  .tag{font-family:system-ui,sans-serif;font-size:.68rem;padding:3px 9px;border-radius:999px;background:var(--chip);color:#6d5560}
+  .tag.chod{background:#ecdde4;font-weight:600}
   .tag.stav{background:#e7efe3;color:#3d5a34}
   .card .src{font-family:system-ui,sans-serif;font-size:.72rem;color:var(--muted)}
   .cardbtns{display:flex;gap:8px;padding:0 17px 15px}
-  .iconbtn{font-family:system-ui,sans-serif;font-size:.78rem;padding:7px 12px;border-radius:999px;border:1px solid #e5ddd0;background:#fff;cursor:pointer;flex:1;color:var(--ink)}
+  .iconbtn{font-family:system-ui,sans-serif;font-size:.78rem;padding:7px 12px;border-radius:999px;border:1px solid #e8dae1;background:#fff;cursor:pointer;flex:1;color:var(--ink)}
   .iconbtn.on{background:var(--accent);border-color:var(--accent);color:#fff}
   .star{position:absolute;top:10px;right:10px;font-size:1.25rem;background:rgba(255,255,255,.88);border:none;border-radius:50%;width:38px;height:38px;cursor:pointer;line-height:1;z-index:2}
   .badge-cas{position:absolute;top:10px;left:10px;font-family:system-ui,sans-serif;font-size:.72rem;background:rgba(255,255,255,.9);border-radius:999px;padding:4px 10px}
@@ -85,7 +85,7 @@
   .grphead::after{content:"";flex:1;height:2px;background:var(--chip);border-radius:2px}
 
   /* košík — spodná lišta */
-  #cartbar{position:fixed;left:0;right:0;bottom:0;background:#26221e;color:#fff;display:none;z-index:30}
+  #cartbar{position:fixed;left:0;right:0;bottom:0;background:#272024;color:#fff;display:none;z-index:30}
   #cartbar .inner{max-width:1020px;margin:0 auto;padding:13px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:system-ui,sans-serif;font-size:.9rem}
   #cartbar button{font-family:system-ui,sans-serif;padding:9px 18px;border-radius:999px;border:none;cursor:pointer}
   #cartbar .show{background:var(--accent);color:#fff;font-weight:600}
@@ -97,30 +97,31 @@
   #modal h3{font-family:Georgia,serif;font-size:1.3rem;font-weight:500;margin-bottom:4px}
   #modal .sub{font-size:.82rem;color:var(--muted);margin-bottom:16px}
   #modal ul{list-style:none;margin:0 0 14px}
-  #modal li{padding:7px 0;border-bottom:1px dashed #e5ddd0;font-size:.92rem}
+  #modal li{padding:7px 0;border-bottom:1px dashed #e8dae1;font-size:.92rem}
   #modal li.sp{color:var(--muted)}
   #modal .grp{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:12px 0 2px}
   #modal label{display:flex;gap:8px;align-items:center;font-size:.85rem;margin-bottom:16px;cursor:pointer}
   #modal .row{display:flex;gap:10px;justify-content:flex-end}
   #modal .primary{background:var(--accent);color:#fff;border:none;padding:10px 20px;border-radius:999px;cursor:pointer;font-weight:600}
-  #modal .ghost{background:none;border:1px solid #ddd4c8;padding:10px 20px;border-radius:999px;cursor:pointer}
+  #modal .ghost{background:none;border:1px solid #e2d3da;padding:10px 20px;border-radius:999px;cursor:pointer}
   #modal .hint{font-size:.78rem;color:var(--muted);margin-top:12px}
 
   /* tmavý režim — podľa nastavenia systému (musí byť až za všetkými základnými pravidlami) */
   @media (prefers-color-scheme: dark){
-    :root{--bg:#1f1c18;--card:#2b2723;--ink:#ece7df;--muted:#a59d90;--chip:#3a352e;--chip-on:#c05621;}
-    #search,#ftoggle,.btn,.iconbtn{background:var(--card);border-color:#4a443c;color:var(--ink)}
-    .tag{color:#c9c1b2}
-    .tag.chod{background:#453f37}
+    :root{--bg:#211a1e;--card:#2d242a;--ink:#efe6ea;--muted:#a89aa1;--chip:#3b2e35;--chip-on:#b0355c;}
+    #search,#ftoggle,.btn,.iconbtn{background:var(--card);border-color:#4c3d45;color:var(--ink)}
+    .tag{color:#cbb9c2}
+    .tag.chod{background:#46363e}
     .tag.stav{background:#2f3a2c;color:#a8c79c}
     .star,.badge-cas{background:rgba(43,39,35,.9)}
     .card{box-shadow:0 1px 4px rgba(0,0,0,.45)}
-    .tab.on{background:#ece7df;color:#1f1c18}
-    .facet{border-color:#3a352e}
+    .tab.on{background:#efe6ea;color:#211a1e}
+    .facet{border-color:#3b2e35}
     #cartbar{background:#0f0d0b}
     #modal{background:var(--card);color:var(--ink)}
-    #modal li{border-color:#4a443c}
-    #modal .ghost{border-color:#4a443c;color:var(--ink)}
+    #modal li{border-color:#4c3d45}
+    #modal .ghost{border-color:#4c3d45;color:var(--ink)}
+    #reset{color:#e58fae}
   }
 </style>
 </head>
@@ -169,7 +170,7 @@
     <button class="ghost" id="mclose">Zavrieť</button>
     <button class="primary" id="mcopy">📋 Kopírovať pre Rohlík</button>
   </div>
-  <div class="hint">Skopírovaný zoznam vlož AI asistentovi na Rohlik.cz („nakúp mi toto…“) alebo do vyhľadávania.</div>
+  <div class="hint">Skopírovaný text je hotový prompt — stačí vložiť AI asistentovi na Rohlik.cz a odoslať.</div>
 </div></div>
 
 <script src="data.js"></script>
@@ -326,8 +327,9 @@ function renderModal(){
 }
 el("mcopy").onclick=()=>{
   const so=el("mspajza").checked, rs=vybrane();
-  let txt="Nákupný zoznam ("+rs.map(r=>r.nazov).join(", ")+"):\n";
+  let txt="Nakúp mi prosím tieto suroviny (recepty: "+rs.map(r=>r.nazov).join(", ")+"):\n";
   rs.forEach(r=>r.suroviny.filter(s=>so||!s.s).forEach(s=>txt+="- "+s.t+"\n"));
+  txt+="Ak niečo nie je dostupné, navrhni najbližšiu alternatívu.";
   navigator.clipboard.writeText(txt).then(()=>{
     el("mcopy").textContent="✓ Skopírované";
     setTimeout(()=>el("mcopy").textContent="📋 Kopírovať pre Rohlík",1800);
