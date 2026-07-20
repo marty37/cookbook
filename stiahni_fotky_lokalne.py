@@ -7,6 +7,7 @@ potom nahraj do repa do priečinka img/ (prepíše placeholdery).
 import re, os, urllib.request
 
 RECEPTY = [
+    ("bezlepkove-kysnute-kolace", "https://www.instagram.com/reel/DXy8eFLtsUL/"),
     ("livanecky-z-cottage", "https://www.instagram.com/reel/DZRjft2MVcg/"),
     ("pecene-donuty", "https://www.instagram.com/reel/Cq-2kKaujgV/"),
     ("mrkva-orzo-kokos", "https://www.instagram.com/reel/C74VmxIMXlk/"),

@@ -4,6 +4,83 @@
 
 const RECEPTY = [
   {
+    "id": "bezlepkove-kysnute-kolace",
+    "nazov": "Bezlepkové kysnuté koláče s orechovou plnkou",
+    "chod": "dezert/sladké",
+    "dieta": [
+      "bez lepku",
+      "vegetariánske"
+    ],
+    "surovina": [],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 180,
+    "porcie": "8 ks",
+    "suroviny": [
+      {
+        "t": "300 g bezlepkovej múky Schär Mix B Bread (cesto)"
+      },
+      {
+        "t": "15 g droždia (cesto)"
+      },
+      {
+        "t": "3 PL kryštálového cukru (cesto)",
+        "s": true
+      },
+      {
+        "t": "1 vajce (cesto)"
+      },
+      {
+        "t": "1 PL psyllia, cca 6 g (cesto)"
+      },
+      {
+        "t": "100 ml vody na psyllium",
+        "s": true
+      },
+      {
+        "t": "210 ml mlieka — z toho 100 ml na kvások (cesto)"
+      },
+      {
+        "t": "25 g masla (cesto)"
+      },
+      {
+        "t": "1 ČL octu (cesto)",
+        "s": true
+      },
+      {
+        "t": "soľ",
+        "s": true
+      },
+      {
+        "t": "200 g mletých vlašských orechov (plnka)"
+      },
+      {
+        "t": "1 škoricový cukor (plnka)"
+      },
+      {
+        "t": "3 PL práškového cukru (plnka)",
+        "s": true
+      },
+      {
+        "t": "100 ml teplého mlieka (plnka)"
+      },
+      {
+        "t": "30 g masla (plnka)"
+      },
+      {
+        "t": "žĺtok + 1,5 PL smotany na potretie"
+      }
+    ],
+    "obrazok": "img/bezlepkove-kysnute-kolace.jpg",
+    "zdroj": "instagram.com/celiakia_s_magdalenou",
+    "url": "https://www.instagram.com/reel/DXy8eFLtsUL/",
+    "pridane": "2026-07-20",
+    "hladanie": "kysnuté koláče orechová plnka bezlepkové psyllium Schär celiakia magdalena",
+    "video": "https://www.instagram.com/reel/DXy8eFLtsUL/"
+  },
+  {
     "id": "livanecky-z-cottage",
     "nazov": "Vláčne lievance z cottage s čučoriedkami",
     "chod": "raňajky/desiata",
