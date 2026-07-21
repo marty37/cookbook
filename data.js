@@ -4,6 +4,51 @@
 
 const RECEPTY = [
   {
+    "id": "pomazanka-z-mozzarelly",
+    "nazov": "Pomazánka z mozzarelly so šunkou",
+    "chod": "nátierka",
+    "dieta": [],
+    "surovina": [
+      "tvaroh/syr"
+    ],
+    "prakticke": [
+      "bez pečenia"
+    ],
+    "stav": "nové",
+    "cas": 10,
+    "porcie": "1 miska",
+    "suroviny": [
+      {
+        "t": "1 balenie mozzarelly light (nastrúhanej nahrubo)"
+      },
+      {
+        "t": "140 g gréckeho jogurtu"
+      },
+      {
+        "t": "120 g lučiny linie (čerstvý syr)"
+      },
+      {
+        "t": "2 strúčiky cesnaku (prelisované)"
+      },
+      {
+        "t": "½ menšej červenej cibule (nadrobno)"
+      },
+      {
+        "t": "100 g šunky (nadrobno)"
+      },
+      {
+        "t": "soľ, čierne korenie",
+        "s": true
+      }
+    ],
+    "obrazok": "img/pomazanka-z-mozzarelly.jpg",
+    "zdroj": "instagram.com/fabry.sara",
+    "url": "https://www.instagram.com/reel/Damu7AcsDSZ/",
+    "pridane": "2026-07-21",
+    "hladanie": "pomazánka mozzarella lučina šunka česnek nátierka fabry sara",
+    "video": "https://www.instagram.com/reel/Damu7AcsDSZ/"
+  },
+  {
     "id": "bezlepkove-kysnute-kolace",
     "nazov": "Bezlepkové kysnuté koláče s orechovou plnkou",
     "chod": "dezert/sladké",

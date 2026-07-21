@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """Stiahne fotky receptov z Instagramu na TVOJOM počítači (z domácej IP to funguje).
 Spustenie:  python3 stiahni_fotky_lokalne.py
-Fotky sa uložia do priečinka 'fotky_receptov' vedľa skriptu — celý jeho obsah
-potom nahraj do repa do priečinka img/ (prepíše placeholdery).
+Sťahuje LEN chýbajúce fotky — podľa zoznamu img/_placeholders.txt (ak existuje)
+a preskočí aj to, čo už je stiahnuté v priečinku fotky_receptov.
+Nové fotky nahraj do repa do priečinka img/ (prepíšu placeholdery).
 """
 import re, os, urllib.request
 
 RECEPTY = [
+    ("pomazanka-z-mozzarelly", "https://www.instagram.com/reel/Damu7AcsDSZ/"),
     ("bezlepkove-kysnute-kolace", "https://www.instagram.com/reel/DXy8eFLtsUL/"),
     ("livanecky-z-cottage", "https://www.instagram.com/reel/DZRjft2MVcg/"),
     ("pecene-donuty", "https://www.instagram.com/reel/Cq-2kKaujgV/"),
@@ -44,6 +46,17 @@ UAS = [
 UA = UAS[2]
 CIEL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fotky_receptov")
 os.makedirs(CIEL, exist_ok=True)
+
+# stahuj len to, co este chyba
+_placeholders = os.path.join(os.path.dirname(os.path.abspath(__file__)), "img", "_placeholders.txt")
+if os.path.exists(_placeholders):
+    chybajuce = {r.strip() for r in open(_placeholders) if r.strip()}
+    RECEPTY = [(rid, url) for rid, url in RECEPTY if rid in chybajuce]
+RECEPTY = [(rid, url) for rid, url in RECEPTY
+           if not os.path.exists(os.path.join(CIEL, rid + ".jpg"))]
+if not RECEPTY:
+    print("Vsetky fotky uz su stiahnute — nie je co robit.")
+    raise SystemExit
 
 def najdi_og(url):
     for ua in UAS:
