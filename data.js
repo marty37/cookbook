@@ -4,6 +4,62 @@
 
 const RECEPTY = [
   {
+    "id": "thajske-dynove-kari",
+    "nazov": "Thajské dyňové kari",
+    "chod": "hlavné jedlo",
+    "dieta": [
+      "vegetariánske"
+    ],
+    "surovina": [
+      "zelenina"
+    ],
+    "prakticke": [
+      "jedna panvica/hrniec"
+    ],
+    "stav": "nové",
+    "cas": 60,
+    "porcie": "4 porcie",
+    "suroviny": [
+      {
+        "t": "600 g tekvice hokkaido alebo maslovej (kocky 2,5 cm)"
+      },
+      {
+        "t": "2 lyžice repkového alebo iného rastlinného oleja",
+        "s": true
+      },
+      {
+        "t": "1 malá cibuľa (väčšie kúsky)"
+      },
+      {
+        "t": "1 červená paprika (kúsky 2,5 cm)"
+      },
+      {
+        "t": "2½ lyžice žltej kari pasty (alebo červenej)"
+      },
+      {
+        "t": "1 plechovka kokosového mlieka (400 g)"
+      },
+      {
+        "t": "250 ml zeleninového vývaru"
+      },
+      {
+        "t": "1 hrnček bazalkových lístkov"
+      },
+      {
+        "t": "dusená ryža na podávanie"
+      },
+      {
+        "t": "soľ, čerstvo mleté čierne korenie",
+        "s": true
+      }
+    ],
+    "obrazok": "https://cdn.administrace.tv/2022/08/07/medium_169/a2bb6d6592b857caf2d2001b914dba9b.jpg",
+    "zdroj": "fresh.iprima.cz",
+    "url": "https://fresh.iprima.cz/recepty/rychla-bezmasa-vecere-thajske-dynove-kari",
+    "pridane": "2026-07-22",
+    "hladanie": "kari dýně tekvica thajské kokosové mléko curry pasta bezmasé prima fresh Kate McMillan"
+  },
+  {
     "id": "pomazanka-z-mozzarelly",
     "nazov": "Pomazánka z mozzarelly so šunkou",
     "chod": "nátierka",
