@@ -1,0 +1,32 @@
+[
+{
+  "id":"thajske-dynove-kari","nazov":"Thajské dyňové kari","emoji":"🎃",
+  "chod":"hlavné jedlo","dieta":["vegetariánske"],"surovina":["zelenina"],"prakticke":["jedna panvica/hrniec"],
+  "stav":"nové","cas":60,"porcie":"4 porcie",
+  "lead":"Chuťovo výrazné a sýte bezmäsité kari — rýchlo hotové a dá sa pripraviť aj niekoľko dní vopred a uchovávať v chladničke. Základ pokojne obmieňaj zeleninou podľa sezóny.",
+  "fakty":[["⏱️ Celkovo","60 min"],["🍛 Thajská kuchyňa",""],["🥦 Bez mäsa",""]],
+  "suroviny":[
+    {"t":"600 g tekvice hokkaido alebo maslovej (kocky 2,5 cm)"},
+    {"t":"2 lyžice repkového alebo iného rastlinného oleja","s":true},
+    {"t":"1 malá cibuľa (väčšie kúsky)"},
+    {"t":"1 červená paprika (kúsky 2,5 cm)"},
+    {"t":"2½ lyžice žltej kari pasty (alebo červenej)"},
+    {"t":"1 plechovka kokosového mlieka (400 g)"},
+    {"t":"250 ml zeleninového vývaru"},
+    {"t":"1 hrnček bazalkových lístkov"},
+    {"t":"dusená ryža na podávanie"},
+    {"t":"soľ, čerstvo mleté čierne korenie","s":true}],
+  "kroky":[
+    "Vo veľkom hrnci priveď do varu poriadne osolenú vodu. Pridaj tekvicu a var ~5 minút, kým zmäkne, ale nebude úplne uvarená. Nechaj dôkladne odkvapkať a odlož bokom.",
+    "V panvici s ťažkým dnom rozohrej olej na stredne vysokú teplotu. Pridaj cibuľu a papriku, osoľ, okoreň a za občasného miešania opekaj ~6 minút do zmäknutia.",
+    "Pridaj tekvicu a kari pastu, dôkladne premiešaj, nech je zelenina v paste obalená, a restuj ešte ~2 minúty.",
+    "Prilej kokosové mlieko a vývar, priveď do varu. Stiahni na nízku teplotu a pomaly var ~15 minút, kým je tekvica mäkká, ale drží tvar.",
+    "Vmiešaj bazalku, dochuť soľou a korením. Naberačkou servíruj do misiek na dusenú ryžu a hneď podávaj."],
+  "tipy":["PRIMA TIP: mimo tekvicovej sezóny funguje akákoľvek škrobovitá zelenina, napríklad sladké zemiaky. Scedená plechovka cíceru dodá jedlu bielkoviny.","K podávaniu sa hodia zelené fazuľky osmažené na troche repkového oleja s pár kvapkami sezamového."],
+  "obrazok":"https://cdn.administrace.tv/2022/08/07/medium_169/a2bb6d6592b857caf2d2001b914dba9b.jpg",
+  "zdroj":"fresh.iprima.cz",
+  "url":"https://fresh.iprima.cz/recepty/rychla-bezmasa-vecere-thajske-dynove-kari",
+  "pridane":"2026-07-22","hladanie":"kari dýně tekvica thajské kokosové mléko curry pasta bezmasé prima fresh Kate McMillan",
+  "metaAutor":"Prima Fresh · Kate McMillan (Rychlé večeře pro školáky)","zdrojText":"fresh.iprima.cz — Rychlá bezmasá večeře: Thajské dýňové kari"
+}
+]

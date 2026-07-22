@@ -164,7 +164,12 @@ def fmt_datum(d):
 def stranka(r):
     e = html.escape
     tagy = "".join(f'<span class="tag">{e(t)}</span>' for t in [r["chod"], *r["dieta"], *r["prakticke"]])
-    fakty = "".join(f"<span>{f[0].split(' ')[0]} <strong>{e(' '.join(f[0].split(' ')[1:]))}:</strong> {e(f[1])}</span>" for f in r["fakty"])
+    def fakt(f):
+        emoji_f, popisok = f[0].split(" ")[0], " ".join(f[0].split(" ")[1:])
+        if f[1]:   # s hodnotou: "⏱️ Celkovo: 25 min"
+            return f"<span>{emoji_f} <strong>{e(popisok)}:</strong> {e(f[1])}</span>"
+        return f"<span>{emoji_f} <strong>{e(popisok)}</strong></span>"   # bez hodnoty: len "🥦 Bez mäsa"
+    fakty = "".join(fakt(f) for f in r["fakty"])
     sur = "\n".join(f'    <li><label><input type="checkbox"><span>{e(s["t"])}</span></label></li>' for s in r["suroviny"])
     kroky = "\n".join(f"    <li>{e(k)}</li>" for k in r["kroky"])
     tipy = "".join(f'  <div class="tip">💡 {e(t)}</div>\n' for t in r.get("tipy",[]))
