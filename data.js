@@ -4,6 +4,54 @@
 
 const RECEPTY = [
   {
+    "id": "mliecny-snidanovy-chlieb",
+    "nazov": "Mliečny raňajkový chlieb (z domácej pekárne)",
+    "chod": "pečivo",
+    "dieta": [
+      "vegetariánske"
+    ],
+    "surovina": [],
+    "prakticke": [],
+    "stav": "nové",
+    "cas": 180,
+    "porcie": "1 chlieb (1000 g)",
+    "suroviny": [
+      {
+        "t": "200 g mlieka"
+      },
+      {
+        "t": "130–140 g vody",
+        "s": true
+      },
+      {
+        "t": "1 lyžička cukru",
+        "s": true
+      },
+      {
+        "t": "4 lyžice oleja",
+        "s": true
+      },
+      {
+        "t": "1,5 rovnej lyžičky soli",
+        "s": true
+      },
+      {
+        "t": "150 g pšeničnej chlebovej múky"
+      },
+      {
+        "t": "350 g hladkej múky"
+      },
+      {
+        "t": "10–12 g čerstvého droždia"
+      }
+    ],
+    "obrazok": "https://www.pekarnomanie.cz/wp-content/uploads/2021/10/DSC_3775-533x800.jpg",
+    "zdroj": "pekarnomanie.cz",
+    "url": "https://www.pekarnomanie.cz/mlecny-snidanovy-chleb/",
+    "pridane": "2026-07-22",
+    "hladanie": "mléčný chléb snídaňový domácí pekárna toustový droždí pekarnomanie"
+  },
+  {
     "id": "thajske-dynove-kari",
     "nazov": "Thajské dyňové kari",
     "chod": "hlavné jedlo",
