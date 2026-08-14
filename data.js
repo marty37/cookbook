@@ -4,6 +4,58 @@
 
 const RECEPTY = [
   {
+    "id": "parene-buchty-starej-mamy",
+    "nazov": "Parené buchty starej mamy",
+    "chod": "dezert/sladké",
+    "dieta": [
+      "vegetariánske"
+    ],
+    "surovina": [],
+    "prakticke": [
+      "jedna panvica/hrniec"
+    ],
+    "stav": "nové",
+    "cas": 90,
+    "porcie": "1 dávka (~20 buchtičiek)",
+    "suroviny": [
+      {
+        "t": "500 g polohrubej múky"
+      },
+      {
+        "t": "1 kocka droždia"
+      },
+      {
+        "t": "400 ml mlieka"
+      },
+      {
+        "t": "30 g kryštálového cukru",
+        "s": true
+      },
+      {
+        "t": "štipka soli",
+        "s": true
+      },
+      {
+        "t": "1 pohár lekváru (plnka)"
+      },
+      {
+        "t": "práškový cukor na posypanie",
+        "s": true
+      },
+      {
+        "t": "kakao na posypanie"
+      },
+      {
+        "t": "maslo na poliatie"
+      }
+    ],
+    "obrazok": "img/parene-buchty-starej-mamy.jpg",
+    "zdroj": "dobruchut.aktuality.sk",
+    "url": "https://dobruchut.aktuality.sk/recept/6258/parene-buchty-starej-mamy/",
+    "pridane": "2026-08-14",
+    "hladanie": "parené buchty lekvár kysnuté cesto babičkine recepty sladký obed dobruchut"
+  },
+  {
     "id": "mliecny-snidanovy-chlieb",
     "nazov": "Mliečny raňajkový chlieb (z domácej pekárne)",
     "chod": "pečivo",

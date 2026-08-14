@@ -35,6 +35,12 @@ fotka alebo text. Postup:
      screenshoty kľúčových záberov (suroviny, kroky) alebo stručný prepis.
    - **Screenshot/fotka**: prečítaj vision-om. Fotku ulož do `img/<id>.jpg`
      a použi ako hero obrázok.
+   - **Web na blokliste fetch nástrojov** (napr. dobruchut.aktuality.sk):
+     požiadaj používateľa, nech stránku uloží ako PDF (v prehliadači
+     Tlačiť → Uložiť ako PDF) a pošle sem. Text vytiahni cez pypdf
+     (`PdfReader(...).pages[n].extract_text()`) a fotku receptu cez
+     `page.images` — ulož ju do `img/<id>.jpg`. Overený postup,
+     text aj fotka v jednom súbore.
 2. **Prelož do slovenčiny** — platí aj pre anglické a české recepty (názvy,
    suroviny, kroky). Zachovaj pôvodné množstvá a jednotky; pri anglických
    prepočítaj imperiálne jednotky (cups, oz, °F) na metrické (ml/g, °C)
@@ -119,3 +125,8 @@ GitHub Pages z hlavnej vetvy. Po zmene: commit + push, Pages sa obnoví samo.
   na požiadanie ("vygeneruj jedálniček na budúci týždeň").
 - Pri väčšom počte receptov spraviť revíziu kategórií podľa reálneho používania
   filtrov (mŕtve kategórie zlúčiť/zrušiť, prehodnotiť "bez lepku" ako default).
+- **Automatizácia príjmu** (zvážené, zatiaľ vedome odložené — používateľ volí
+  manuálny režim): variant A = Claude GitHub Action, recepty cez Issues
+  (potrebuje API kľúč; IG len so screenshotom popisku); variant B = naplánovaná
+  Cowork úloha + inbox priečinok + git push (zvládne aj IG cez Chrome).
+  Vrátiť sa k tomu, keď manuálne dávky začnú byť otravné.

@@ -8,6 +8,7 @@ Nové fotky nahraj do repa do priečinka img/ (prepíšu placeholdery).
 import re, os, urllib.request
 
 RECEPTY = [
+    ("parene-buchty-starej-mamy", "https://dobruchut.aktuality.sk/recept/6258/parene-buchty-starej-mamy/"),
     ("pomazanka-z-mozzarelly", "https://www.instagram.com/reel/Damu7AcsDSZ/"),
     ("bezlepkove-kysnute-kolace", "https://www.instagram.com/reel/DXy8eFLtsUL/"),
     ("livanecky-z-cottage", "https://www.instagram.com/reel/DZRjft2MVcg/"),
