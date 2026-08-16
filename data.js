@@ -4,6 +4,56 @@
 
 const RECEPTY = [
   {
+    "id": "lahky-tvaroznik-s-ovocim",
+    "nazov": "Ľahký tvarožník s ovocím",
+    "chod": "dezert/sladké",
+    "dieta": [
+      "vegetariánske"
+    ],
+    "surovina": [
+      "tvaroh/syr",
+      "ovocie"
+    ],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 60,
+    "porcie": "1 okrúhla forma",
+    "suroviny": [
+      {
+        "t": "500 g tvarohu (1 netučný + 1 tučný z vaničky)"
+      },
+      {
+        "t": "3 vajcia"
+      },
+      {
+        "t": "100 g masla (zmäknutého)"
+      },
+      {
+        "t": "4 lyžice hrubej múky alebo krupice (možno aj špaldová celozrnná)"
+      },
+      {
+        "t": "100 g sladidla (cukor, med či sirup)",
+        "s": true
+      },
+      {
+        "t": "vanilkový cukor"
+      },
+      {
+        "t": "½ prášku do pečiva"
+      },
+      {
+        "t": "~300 g višní (kompótované, vykôstkované) alebo iné ovocie"
+      }
+    ],
+    "obrazok": "https://varilamysicka.cz/wp-content/uploads/2024/11/lehky-tvaroznik-s-ovocem-head.jpg",
+    "zdroj": "varilamysicka.cz",
+    "url": "https://varilamysicka.cz/zdrave-recepty/lehky-tvaroznik-s-ovocem/",
+    "pridane": "2026-08-14",
+    "hladanie": "tvarožník tvaroh višně broskve borůvky lehký dezert varilamysicka myšička"
+  },
+  {
     "id": "parene-buchty-starej-mamy",
     "nazov": "Parené buchty starej mamy",
     "chod": "dezert/sladké",
