@@ -4,6 +4,98 @@
 
 const RECEPTY = [
   {
+    "id": "syrove-vafle-s-mrkvou",
+    "nazov": "Syrové vafle s mrkvou",
+    "chod": "raňajky/desiata",
+    "dieta": [
+      "vegetariánske",
+      "bez lepku"
+    ],
+    "surovina": [
+      "tvaroh/syr",
+      "zelenina"
+    ],
+    "prakticke": [],
+    "stav": "nové",
+    "cas": 20,
+    "porcie": "7–8 vaflí",
+    "suroviny": [
+      {
+        "t": "2 mrkvy (~190 g pred očistením)"
+      },
+      {
+        "t": "80 g tvrdého syra (ementál, gouda, parmezán)"
+      },
+      {
+        "t": "2 vajcia"
+      },
+      {
+        "t": "200 g cottage syra"
+      },
+      {
+        "t": "115 g jemných ovsených vločiek (bezlepkové = celý recept bez lepku)"
+      },
+      {
+        "t": "40 g rastlinného oleja (napr. mandľový)",
+        "s": true
+      },
+      {
+        "t": "8 g kypriaceho prášku"
+      },
+      {
+        "t": "soľ",
+        "s": true
+      }
+    ],
+    "obrazok": "img/syrove-vafle-s-mrkvou.jpg",
+    "zdroj": "instagram.com/buchtavtroube.cz",
+    "url": "https://www.instagram.com/reel/DcRH1vYNvSd/",
+    "pridane": "2026-08-27",
+    "hladanie": "vafle sýrové mrkev cottage svačina vaflovač do krabičky buchtavtroube",
+    "video": "https://www.instagram.com/reel/DcRH1vYNvSd/"
+  },
+  {
+    "id": "pohankove-rozteky",
+    "nazov": "Pohánkové rožteky (od 1 roka)",
+    "chod": "dezert/sladké",
+    "dieta": [
+      "bez lepku",
+      "vegetariánske"
+    ],
+    "surovina": [],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 40,
+    "porcie": "~30 rožtekov",
+    "suroviny": [
+      {
+        "t": "150 g pohánkovej múky"
+      },
+      {
+        "t": "100 g prepusteného masla ghí (alebo klasického)"
+      },
+      {
+        "t": "20 g kakaa holandského typu"
+      },
+      {
+        "t": "50 g kokosového cukru"
+      },
+      {
+        "t": "30 g (2 lyžice) javorového sirupu"
+      },
+      {
+        "t": "1 vajce"
+      }
+    ],
+    "obrazok": "https://mamavkuchyni.cz/wp-content/uploads/2017/11/IMG_6345-1-683x1024.jpg",
+    "zdroj": "mamavkuchyni.cz",
+    "url": "https://mamavkuchyni.cz/pohankove-rohlicky/",
+    "pridane": "2026-08-27",
+    "hladanie": "pohankové rohlíčky pracny kakao bezlepkové cukroví pro děti mamavkuchyni"
+  },
+  {
     "id": "lahky-tvaroznik-s-ovocim",
     "nazov": "Ľahký tvarožník s ovocím",
     "chod": "dezert/sladké",
