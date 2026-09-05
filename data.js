@@ -4,6 +4,68 @@
 
 const RECEPTY = [
   {
+    "id": "bananovy-chlieb",
+    "nazov": "Banánový chlieb",
+    "chod": "dezert/sladké",
+    "dieta": [
+      "vegetariánske"
+    ],
+    "surovina": [
+      "ovocie",
+      "vajcia"
+    ],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 75,
+    "porcie": "1 chlebík (forma na biskupský chlebík)",
+    "suroviny": [
+      {
+        "t": "3–4 zrelé banány"
+      },
+      {
+        "t": "⅓ hrnčeka roztopeného masla"
+      },
+      {
+        "t": "¼ hrnčeka trstinového cukru"
+      },
+      {
+        "t": "1 vanilkový cukor"
+      },
+      {
+        "t": "1 vajce"
+      },
+      {
+        "t": "1 KL sódy bikarbóny"
+      },
+      {
+        "t": "štipka soli",
+        "s": true
+      },
+      {
+        "t": "štipka prášku do pečiva"
+      },
+      {
+        "t": "štipka škorice"
+      },
+      {
+        "t": "1,5 hrnčeka polohrubej múky"
+      },
+      {
+        "t": "trocha mlieka na zriedenie"
+      },
+      {
+        "t": "kokos na vysypanie formy"
+      }
+    ],
+    "obrazok": "img/bananovy-chlieb.jpg",
+    "zdroj": "rodinný receptár",
+    "url": "",
+    "pridane": "2026-08-27",
+    "hladanie": "banánový chléb banana bread banány škorica chlebík rodinný recept"
+  },
+  {
     "id": "syrove-vafle-s-mrkvou",
     "nazov": "Syrové vafle s mrkvou",
     "chod": "raňajky/desiata",
