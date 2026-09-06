@@ -4,6 +4,54 @@
 
 const RECEPTY = [
   {
+    "id": "kefirove-vafle",
+    "nazov": "Kefírové vafle so škoricou",
+    "chod": "raňajky/desiata",
+    "dieta": [
+      "vegetariánske"
+    ],
+    "surovina": [
+      "vajcia"
+    ],
+    "prakticke": [],
+    "stav": "nové",
+    "cas": 20,
+    "porcie": "1 dávka vaflí",
+    "suroviny": [
+      {
+        "t": "200 g hladkej múky (autorka dala špaldovú)"
+      },
+      {
+        "t": "50 ml oleja",
+        "s": true
+      },
+      {
+        "t": "50 g cukru alebo medu",
+        "s": true
+      },
+      {
+        "t": "1 lyžička škorice"
+      },
+      {
+        "t": "1 lyžička prášku do pečiva"
+      },
+      {
+        "t": "400 ml kefíru"
+      },
+      {
+        "t": "2 vajcia"
+      },
+      {
+        "t": "voliteľne 1 lyžica chia semienok (pre deti od 3 rokov)"
+      }
+    ],
+    "obrazok": "img/kefirove-vafle.jpg",
+    "zdroj": "FB skupina — Veronika Zbránková",
+    "url": "",
+    "pridane": "2026-09-06",
+    "hladanie": "kefírové vafle skořice kefír vaflovač rychlá snídaně pro děti špaldová mouka"
+  },
+  {
     "id": "bananovy-chlieb",
     "nazov": "Banánový chlieb",
     "chod": "dezert/sladké",
