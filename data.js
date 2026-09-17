@@ -4,6 +4,73 @@
 
 const RECEPTY = [
   {
+    "id": "celozrnne-mrkvove-vafle",
+    "nazov": "Celozrnné mrkvové vafle so škoricovým krémom",
+    "chod": "raňajky/desiata",
+    "dieta": [
+      "vegetariánske"
+    ],
+    "surovina": [
+      "zelenina",
+      "tvaroh/syr"
+    ],
+    "prakticke": [],
+    "stav": "nové",
+    "cas": 65,
+    "porcie": "12 kusov",
+    "suroviny": [
+      {
+        "t": "500 g mascarpone (krém)"
+      },
+      {
+        "t": "80–100 g javorového sirupu (krém)"
+      },
+      {
+        "t": "½ ČL mletej škorice (krém)"
+      },
+      {
+        "t": "150 g mrkvy, na kúsky (vafle)"
+      },
+      {
+        "t": "2 vajcia (vafle)"
+      },
+      {
+        "t": "320 g mlieka (vafle)"
+      },
+      {
+        "t": "50 g repkového oleja + na pečenie (vafle)",
+        "s": true
+      },
+      {
+        "t": "150 g celozrnnej pšeničnej múky (vafle)"
+      },
+      {
+        "t": "150 g hladkej múky (vafle)"
+      },
+      {
+        "t": "2 ČL kypriaceho prášku (vafle)"
+      },
+      {
+        "t": "1 ČL mletej škorice (vafle)"
+      },
+      {
+        "t": "1 ČL vanilkového cukru (vafle)"
+      },
+      {
+        "t": "80 g agávového sirupu — alebo javorového (vafle)"
+      },
+      {
+        "t": "štipka soli",
+        "s": true
+      }
+    ],
+    "obrazok": "https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480/img/recipe/ras/Assets/2D0DB567-1473-44E4-A8B8-45CFCDBC4C7A/Derivates/E8110263-B310-4EC0-BB90-510C016D916B.jpg",
+    "zdroj": "cookidoo.cz",
+    "url": "https://cookidoo.cz/recipes/recipe/cs/r323378",
+    "pridane": "2026-09-17",
+    "hladanie": "mrkvové vafle celozrnné skořicový krém mascarpone thermomix cookidoo vaflovač snídaně"
+  },
+  {
     "id": "kefirove-vafle",
     "nazov": "Kefírové vafle so škoricou",
     "chod": "raňajky/desiata",
