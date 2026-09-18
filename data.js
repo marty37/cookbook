@@ -4,6 +4,65 @@
 
 const RECEPTY = [
   {
+    "id": "cuketove-mini-pizzy",
+    "nazov": "Cuketové mini pizze",
+    "chod": "hlavné jedlo",
+    "dieta": [
+      "vegetariánske",
+      "bez lepku"
+    ],
+    "surovina": [
+      "zelenina",
+      "tvaroh/syr"
+    ],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 45,
+    "porcie": "4 mini pizze (1 ks ~189 kcal, 14 g B)",
+    "suroviny": [
+      {
+        "t": "300 g cukety, najemno nastrúhanej (korpus)"
+      },
+      {
+        "t": "50 g jemných ovsených vločiek (bezlepkové = celý recept bez lepku)"
+      },
+      {
+        "t": "100 g odtučneného tvarohu (korpus)"
+      },
+      {
+        "t": "1 vajce (korpus)"
+      },
+      {
+        "t": "40 g strúhanej mozzarelly (korpus)"
+      },
+      {
+        "t": "soľ, čierne korenie",
+        "s": true
+      },
+      {
+        "t": "korenie: bazalka, oregano, pizza korenie",
+        "s": true
+      },
+      {
+        "t": "100 g rajčinovej passaty (topping)"
+      },
+      {
+        "t": "~300 g rajčín (topping)"
+      },
+      {
+        "t": "40 g mozzarelly (topping)"
+      }
+    ],
+    "obrazok": "img/cuketove-mini-pizzy.jpg",
+    "zdroj": "instagram.com/fit.foodie.diaries",
+    "url": "https://www.instagram.com/reel/DcvqzGOIofe/",
+    "pridane": "2026-09-18",
+    "hladanie": "cuketová pizza cuketa zdravá fit protein mini pizzy vločky tvaroh fit foodie diaries",
+    "video": "https://www.instagram.com/reel/DcvqzGOIofe/"
+  },
+  {
     "id": "bezlepkovy-bananovy-chlebik",
     "nazov": "Bezlepkový banánový chlebík",
     "chod": "dezert/sladké",
