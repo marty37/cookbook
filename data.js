@@ -4,6 +4,106 @@
 
 const RECEPTY = [
   {
+    "id": "bezlepkovy-bananovy-chlebik",
+    "nazov": "Bezlepkový banánový chlebík",
+    "chod": "dezert/sladké",
+    "dieta": [
+      "bez lepku",
+      "vegetariánske"
+    ],
+    "surovina": [
+      "ovocie",
+      "čokoláda"
+    ],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 50,
+    "porcie": "1 chlebík (forma na srnčí chrbát)",
+    "suroviny": [
+      {
+        "t": "1½ hrnčeka bezlepkovej múky Schär Mix B"
+      },
+      {
+        "t": "2 vajcia"
+      },
+      {
+        "t": "1 škoricový cukor"
+      },
+      {
+        "t": "½ hrnčeka cukru",
+        "s": true
+      },
+      {
+        "t": "3 banány"
+      },
+      {
+        "t": "125 g masla"
+      },
+      {
+        "t": "1 prášok do pečiva"
+      },
+      {
+        "t": "kúsky čokolády"
+      }
+    ],
+    "obrazok": "img/bezlepkovy-bananovy-chlebik.jpg",
+    "zdroj": "instagram.com/gluten_zero_jana",
+    "url": "https://www.instagram.com/reel/DQhN9vdiLIV/",
+    "pridane": "2026-09-18",
+    "hladanie": "banánový chlebík bez lepku glutenfree banana bread Schär Mix B čokoláda srnčí chrbát celiakia",
+    "video": "https://www.instagram.com/reel/DQhN9vdiLIV/"
+  },
+  {
+    "id": "bezlepkove-cottage-bulky",
+    "nazov": "Bezlepkové cottage bulky",
+    "chod": "pečivo",
+    "dieta": [
+      "bez lepku",
+      "vegetariánske"
+    ],
+    "surovina": [
+      "tvaroh/syr",
+      "vajcia"
+    ],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 30,
+    "porcie": "1 dávka bochánkov",
+    "suroviny": [
+      {
+        "t": "100 g bezlepkovej múky Schär Mix B"
+      },
+      {
+        "t": "150 g cottage syra (prírodný)"
+      },
+      {
+        "t": "50 g žervé"
+      },
+      {
+        "t": "1½ lyžičky soli",
+        "s": true
+      },
+      {
+        "t": "1½ lyžičky kypriaceho prášku"
+      },
+      {
+        "t": "½ lyžičky drveného kmínu"
+      },
+      {
+        "t": "1 vajce"
+      }
+    ],
+    "obrazok": "img/bezlepkove-cottage-bulky.jpg",
+    "zdroj": "instagram.com/ctu.a.pecu",
+    "url": "https://www.instagram.com/p/DH0ZVoisb6t/",
+    "pridane": "2026-09-18",
+    "hladanie": "bulky bochánky cottage žervé bez lepku bezlepkové pečivo bez kynutí kmín Schär celiakia ctu a pecu"
+  },
+  {
     "id": "celozrnne-mrkvove-vafle",
     "nazov": "Celozrnné mrkvové vafle so škoricovým krémom",
     "chod": "raňajky/desiata",
