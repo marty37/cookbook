@@ -4,6 +4,156 @@
 
 const RECEPTY = [
   {
+    "id": "cottage-pizza-bez-lepku",
+    "nazov": "Rýchla cottage pizza bez lepku",
+    "chod": "hlavné jedlo",
+    "dieta": [
+      "bez lepku"
+    ],
+    "surovina": [
+      "tvaroh/syr",
+      "vajcia"
+    ],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 45,
+    "porcie": "1 väčšia pizza (alebo 2 menšie a tenšie)",
+    "suroviny": [
+      {
+        "t": "2 kelímky cottage syra (korpus)"
+      },
+      {
+        "t": "2 vajcia (korpus)"
+      },
+      {
+        "t": "½ KL soli",
+        "s": true
+      },
+      {
+        "t": "80 g bezlepkovej múky (napr. Schär Mix B)"
+      },
+      {
+        "t": "olivový olej na potretie",
+        "s": true
+      },
+      {
+        "t": "na pizzu: rajčinová omáčka, syry, saláma, olivy, rajčiny, kukurica, bazalka, oregano…"
+      }
+    ],
+    "obrazok": "img/cottage-pizza-bez-lepku.jpg",
+    "zdroj": "FB Recepty BEZ LEPKU",
+    "url": "https://www.facebook.com/share/p/1C8b93oX7B/",
+    "pridane": "2026-09-19",
+    "hladanie": "cottage pizza bez lepku glutenfree korpus bílkoviny bez kynutí Schär rychlá"
+  },
+  {
+    "id": "batatove-perky",
+    "nazov": "Batatové perky so slivkovým lekvárom a makom",
+    "chod": "dezert/sladké",
+    "dieta": [
+      "vegetariánske"
+    ],
+    "surovina": [
+      "zemiaky"
+    ],
+    "prakticke": [
+      "jedna panvica/hrniec"
+    ],
+    "stav": "nové",
+    "cas": 60,
+    "porcie": "5 porcií (1 porcia ~515 kcal)",
+    "suroviny": [
+      {
+        "t": "500 g batatov"
+      },
+      {
+        "t": "330 g špaldovej polohrubej múky"
+      },
+      {
+        "t": "1 lyžička soli",
+        "s": true
+      },
+      {
+        "t": "1 vajíčko + 1 na zlepovanie"
+      },
+      {
+        "t": "50 g domáceho hustého slivkového lekváru"
+      },
+      {
+        "t": "50 g mletého maku"
+      },
+      {
+        "t": "50 g masla"
+      },
+      {
+        "t": "50 g cukru a škorica na posypanie",
+        "s": true
+      }
+    ],
+    "obrazok": "https://d2c9wzes5ckfvo.cloudfront.net/blog/perky%20lekv%C3%A1rov%C3%A9-231044-medium.jpg",
+    "zdroj": "fitshaker.sk",
+    "url": "https://fitshaker.sk/batatove-perky-so-slivkovym-lekvarom-a-s-makom",
+    "pridane": "2026-09-19",
+    "hladanie": "perky pirohy batat sladké zemiaky slivkový lekvár mak babkine tradičné fitshaker"
+  },
+  {
+    "id": "bezlepkove-brownies",
+    "nazov": "Bezlepkové čokoládové brownies",
+    "chod": "dezert/sladké",
+    "dieta": [
+      "bez lepku",
+      "vegetariánske"
+    ],
+    "surovina": [
+      "čokoláda",
+      "vajcia"
+    ],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 45,
+    "porcie": "15 ks (1 ks ~180 kcal)",
+    "suroviny": [
+      {
+        "t": "115 g masla"
+      },
+      {
+        "t": "200 g horkej čokolády"
+      },
+      {
+        "t": "115 g ryžovej múky"
+      },
+      {
+        "t": "½ ČL kypriaceho prášku"
+      },
+      {
+        "t": "štedrá štipka soli",
+        "s": true
+      },
+      {
+        "t": "35 g trstinového cukru",
+        "s": true
+      },
+      {
+        "t": "65 g vanilkového práškového sladidla"
+      },
+      {
+        "t": "3 vajcia"
+      },
+      {
+        "t": "20 g pekanových orechov (na posypanie)"
+      }
+    ],
+    "obrazok": "https://cdn.vilgain.com/image/recipe-cover/cover-desktop/MG-9308.jpg",
+    "zdroj": "aktin.cz",
+    "url": "https://aktin.cz/luxusni-cokoladove-brownies-na-kterych-si-pochutnaji-i-bezlepkari",
+    "pridane": "2026-09-19",
+    "hladanie": "brownies bezlepkové čokoláda rýžová mouka luxusní vláčné aktin vilgain"
+  },
+  {
     "id": "cuketove-mini-pizzy",
     "nazov": "Cuketové mini pizze",
     "chod": "hlavné jedlo",
