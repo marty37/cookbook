@@ -4,6 +4,106 @@
 
 const RECEPTY = [
   {
+    "id": "fit-parizsky-salat",
+    "nazov": "Fit parížsky šalát",
+    "chod": "šalát",
+    "dieta": [],
+    "surovina": [
+      "tvaroh/syr",
+      "hovädzie/bravčové"
+    ],
+    "prakticke": [
+      "bez pečenia"
+    ],
+    "stav": "nové",
+    "cas": 10,
+    "porcie": "1 miska",
+    "suroviny": [
+      {
+        "t": "150 g kvalitnej šunky"
+      },
+      {
+        "t": "100 g hrášku"
+      },
+      {
+        "t": "250 g nízkotučného tvarohu"
+      },
+      {
+        "t": "50 g cream cheese light"
+      },
+      {
+        "t": "50 g kyslých uhoriek"
+      },
+      {
+        "t": "¼ cibule"
+      },
+      {
+        "t": "1 PL horčice",
+        "s": true
+      },
+      {
+        "t": "½–1 ČL dijonskej horčice",
+        "s": true
+      },
+      {
+        "t": "1–2 PL nálevu z uhoriek"
+      },
+      {
+        "t": "¼ ČL čierneho korenia",
+        "s": true
+      },
+      {
+        "t": "¼ ČL soli",
+        "s": true
+      }
+    ],
+    "obrazok": "img/fit-parizsky-salat.jpg",
+    "zdroj": "instagram.com/vilgainczsk",
+    "url": "",
+    "pridane": "2026-09-24",
+    "hladanie": "pařížský salát parížsky fit šunka hrášok tvaroh bez majonézy pomazánka vilgain"
+  },
+  {
+    "id": "bezlepkove-placky",
+    "nazov": "Bezlepkové jogurtové placky do 10 minút",
+    "chod": "pečivo",
+    "dieta": [
+      "bez lepku",
+      "vegetariánske"
+    ],
+    "surovina": [],
+    "prakticke": [
+      "jedna panvica/hrniec"
+    ],
+    "stav": "nové",
+    "cas": 10,
+    "porcie": "~6 placiek",
+    "suroviny": [
+      {
+        "t": "5 lyžíc jogurtu"
+      },
+      {
+        "t": "3 lyžice oleja (možno aj viac — potom netreba mastiť panvicu)",
+        "s": true
+      },
+      {
+        "t": "1 lyžička bezlepkového prášku do pečiva"
+      },
+      {
+        "t": "štipka soli",
+        "s": true
+      },
+      {
+        "t": "bezlepková múka podľa potreby na nelepivé cesto (Jizerka, Schär Mix B, funguje každá univerzálna)"
+      }
+    ],
+    "obrazok": "img/bezlepkove-placky.jpg",
+    "zdroj": "FB skupina CELIAKIE",
+    "url": "",
+    "pridane": "2026-09-24",
+    "hladanie": "placky bezlepkové jogurtové tortilla rychlé bez lepku chlebové jizerka Schär celiakie"
+  },
+  {
     "id": "bezlepkovy-ovocny-kolac",
     "nazov": "Bezlepkový liaty ovocný koláč s posýpkou",
     "chod": "dezert/sladké",
