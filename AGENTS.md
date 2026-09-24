@@ -116,13 +116,18 @@ fotka alebo text. Postup:
 
 GitHub Pages z hlavnej vetvy. Po zmene: commit + push, Pages sa obnoví samo.
 
+## Jedálniček
+
+`jedalnicek.html` — týždenný plán varenia (hotové od 50 receptov, 9/2026):
+vážený náhodný výber hlavných jedál (osvedčené 4× > vyskúšané 2× > nové 1×),
+striedanie hlavnej suroviny po dňoch, voliteľne 2 polievky, výmena
+jednotlivých dní (🔄), zlúčený nákupný zoznam s Rohlík promptom. Plán sa
+pamätá v localStorage kľúči `recepty_jedalnicek` (nemeniť). Odkaz z indexu
+(🗓️ Jedálniček v statusbare).
+
 ## Plán do budúcna (na výslovnú žiadosť používateľa)
 
-- **Generovanie jedálničkov** — keď zbierka narastie (~50+ receptov): týždenný
-  jedálniček zo zbierky (obedy/večere podľa chodov, striedanie surovín, preferovať
-  osvedčené recepty), plus generovanie desiat/svačiniek pre deti. Výstup: plán
-  dní + zlúčený nákupný zoznam pre Rohlík. Formou novej stránky alebo dávkovo
-  na požiadanie ("vygeneruj jedálniček na budúci týždeň").
+- Generovanie desiat/svačiniek pre deti (obdoba jedálnička pre raňajky/desiaty).
 - Pri väčšom počte receptov spraviť revíziu kategórií podľa reálneho používania
   filtrov (mŕtve kategórie zlúčiť/zrušiť, prehodnotiť "bez lepku" ako default).
 - **Automatizácia príjmu** (zvážené, zatiaľ vedome odložené — používateľ volí
