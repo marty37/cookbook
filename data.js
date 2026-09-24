@@ -4,6 +4,67 @@
 
 const RECEPTY = [
   {
+    "id": "bezlepkovy-ovocny-kolac",
+    "nazov": "Bezlepkový liaty ovocný koláč s posýpkou",
+    "chod": "dezert/sladké",
+    "dieta": [
+      "bez lepku",
+      "vegetariánske"
+    ],
+    "surovina": [
+      "ovocie"
+    ],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 40,
+    "porcie": "1 menší hlbší pekáč (~35 × 25 cm)",
+    "suroviny": [
+      {
+        "t": "200 g kyslej smotany (cesto)"
+      },
+      {
+        "t": "180 g bezlepkovej múky Schär Mix C (cesto)"
+      },
+      {
+        "t": "100 g kryštálového cukru",
+        "s": true
+      },
+      {
+        "t": "2 vajcia (cesto)"
+      },
+      {
+        "t": "50 ml oleja",
+        "s": true
+      },
+      {
+        "t": "1 vanilkový cukor (cesto)"
+      },
+      {
+        "t": "1 bezlepkový kypriaci prášok (cesto)"
+      },
+      {
+        "t": "ovocie podľa chuti — napr. strúhané jablko so škoricovým cukrom a hrozienkami, čerstvé či kompótované"
+      },
+      {
+        "t": "4 lyžice cukru (posýpka)",
+        "s": true
+      },
+      {
+        "t": "4 lyžice polohrubej ryžovej múky (posýpka)"
+      },
+      {
+        "t": "2 lyžice masla (posýpka)"
+      }
+    ],
+    "obrazok": "https://www.proalergiky.cz/getmedia/6588aeb2-b100-4676-9096-aa13798b6315/LityBezlepkovyOvocnyKolacSDrobenkoumain_ne2x.png.aspx",
+    "zdroj": "proalergiky.cz",
+    "url": "https://www.proalergiky.cz/recepty/lity-bezlepkovy-ovocny-kolac-s-drobenkou",
+    "pridane": "2026-09-23",
+    "hladanie": "litý koláč bezlepkový ovocný drobenka posýpka Schär Mix C jablko zakysaná smetana proalergiky"
+  },
+  {
     "id": "cottage-pizza-bez-lepku",
     "nazov": "Rýchla cottage pizza bez lepku",
     "chod": "hlavné jedlo",
