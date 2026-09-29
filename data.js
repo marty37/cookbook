@@ -4,6 +4,63 @@
 
 const RECEPTY = [
   {
+    "id": "bezlepkove-povidlove-buchty",
+    "nazov": "Bezlepkové povidlové buchty z formy na muffiny",
+    "chod": "dezert/sladké",
+    "dieta": [
+      "bez lepku",
+      "vegetariánske"
+    ],
+    "surovina": [],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 180,
+    "porcie": "12 ks (forma na muffiny)",
+    "suroviny": [
+      {
+        "t": "250 g bezlepkovej zmesi Liana Bakery Mix"
+      },
+      {
+        "t": "200 ml vlažného mlieka"
+      },
+      {
+        "t": "40 g cukru (+ lyžička do kvásku)",
+        "s": true
+      },
+      {
+        "t": "30 g rozpusteného masla"
+      },
+      {
+        "t": "12 g droždia"
+      },
+      {
+        "t": "1 vajce"
+      },
+      {
+        "t": "väčšia štipka soli",
+        "s": true
+      },
+      {
+        "t": "povidlá (slivkový lekvár) na plnenie"
+      },
+      {
+        "t": "práškový cukor na posypanie",
+        "s": true
+      },
+      {
+        "t": "kúsok masla a kvapka rumu na potretie"
+      }
+    ],
+    "obrazok": "img/bezlepkove-povidlove-buchty.jpg",
+    "zdroj": "FB Recepty BEZ LEPKU",
+    "url": "https://www.facebook.com/share/r/1DtJRUiUPJ/",
+    "pridane": "2026-09-29",
+    "hladanie": "povidlové buchty muffiny bezlepkové kysnuté droždí Liana povidla podzim bez lepku",
+    "video": "https://www.facebook.com/share/r/1DtJRUiUPJ/"
+  },
+  {
     "id": "fit-parizsky-salat",
     "nazov": "Fit parížsky šalát",
     "chod": "šalát",
