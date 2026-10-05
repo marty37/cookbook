@@ -4,6 +4,59 @@
 
 const RECEPTY = [
   {
+    "id": "kvaskovy-chlieb-schar-mix-b",
+    "nazov": "Jednoduchý kváskový chlieb zo Schär Mix B",
+    "chod": "pečivo",
+    "dieta": [
+      "bez lepku",
+      "vegánske",
+      "vegetariánske"
+    ],
+    "surovina": [],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 720,
+    "porcie": "1 bochník",
+    "suroviny": [
+      {
+        "t": "10 g čerstvého bezlepkového kvásku (rozkvas)"
+      },
+      {
+        "t": "160 g vody (rozkvas)",
+        "s": true
+      },
+      {
+        "t": "150 g zmesi Schär Mix B (rozkvas)"
+      },
+      {
+        "t": "200 g vody (cesto)",
+        "s": true
+      },
+      {
+        "t": "10 g olivového oleja (cesto)",
+        "s": true
+      },
+      {
+        "t": "300 g zmesi Schär Mix B (cesto)"
+      },
+      {
+        "t": "1 lyžička rasce (pokojne mletej)",
+        "s": true
+      },
+      {
+        "t": "11 g soli",
+        "s": true
+      }
+    ],
+    "obrazok": "img/kvaskovy-chlieb-schar-mix-b.jpg",
+    "zdroj": "zdieľané cez Signal",
+    "url": "",
+    "pridane": "2026-10-05",
+    "hladanie": "kváskový chléb bezlepkový Schär Mix B ošatka Simax kmín rozkvas sourdough bez lepku"
+  },
+  {
     "id": "batatove-satecky",
     "nazov": "Batátové šátečky (od 7 mesiacov)",
     "chod": "dezert/sladké",
