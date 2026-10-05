@@ -4,6 +4,146 @@
 
 const RECEPTY = [
   {
+    "id": "batatove-satecky",
+    "nazov": "Batátové šátečky (od 7 mesiacov)",
+    "chod": "dezert/sladké",
+    "dieta": [
+      "vegetariánske"
+    ],
+    "surovina": [
+      "zemiaky"
+    ],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 45,
+    "porcie": "~30 malých šátečkov",
+    "suroviny": [
+      {
+        "t": "180 g batátu (1 menší kúsok)"
+      },
+      {
+        "t": "90 g prepusteného masla (ghí)"
+      },
+      {
+        "t": "100 g celozrnnej špaldovej múky"
+      },
+      {
+        "t": "100 g hladkej pšeničnej múky"
+      },
+      {
+        "t": "40 g (1 vrchovatá lyžica) bieleho jogurtu"
+      },
+      {
+        "t": "povidlá či iná náplň podľa chuti"
+      }
+    ],
+    "obrazok": "https://mamavkuchyni.cz/wp-content/uploads/2020/03/IMG_9000-1-1-682x1024.jpg",
+    "zdroj": "mamavkuchyni.cz",
+    "url": "https://mamavkuchyni.cz/batatove-satecky/",
+    "pridane": "2026-10-05",
+    "hladanie": "šátečky batáty povidla miminka rohlíčky svačina pro děti mama v kuchyni sladké zemiaky"
+  },
+  {
+    "id": "bezlepkove-bagely",
+    "nazov": "Bezlepkové bagely",
+    "chod": "pečivo",
+    "dieta": [
+      "bez lepku"
+    ],
+    "surovina": [],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 150,
+    "porcie": "~9 ks",
+    "suroviny": [
+      {
+        "t": "500 g bezlepkovej múky Schär Mix B"
+      },
+      {
+        "t": "10 g sušeného droždia"
+      },
+      {
+        "t": "400 ml mlieka (pokojne bez laktózy)"
+      },
+      {
+        "t": "1 lyžička cukru",
+        "s": true
+      },
+      {
+        "t": "2 lyžičky soli",
+        "s": true
+      },
+      {
+        "t": "1 lyžica masti"
+      },
+      {
+        "t": "1 vajce"
+      },
+      {
+        "t": "sezam na posypanie"
+      }
+    ],
+    "obrazok": "img/bezlepkove-bagely.jpg",
+    "zdroj": "instagram.com/bezlepkova_rodina",
+    "url": "https://www.instagram.com/p/CnpdPzNrSRi/",
+    "pridane": "2026-10-05",
+    "hladanie": "bagel bagely bezlepkové Schär kynuté vařené pečivo sezam celiakie bezlepkova rodina"
+  },
+  {
+    "id": "kvaskove-krekry",
+    "nazov": "Kváskové krekry so semienkami (bez lepku)",
+    "chod": "chuťovka",
+    "dieta": [
+      "bez lepku",
+      "vegetariánske"
+    ],
+    "surovina": [],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 60,
+    "porcie": "1 plech krekrov",
+    "suroviny": [
+      {
+        "t": "150 g kvásku (bezlepkového)"
+      },
+      {
+        "t": "75 g bezlepkovej múky Schär Mix B"
+      },
+      {
+        "t": "30 g oleja",
+        "s": true
+      },
+      {
+        "t": "12 g slnečnicových semienok"
+      },
+      {
+        "t": "12 g ľanových semienok"
+      },
+      {
+        "t": "6 g ďalších semienok — tekvicové, konopné, sezam…"
+      },
+      {
+        "t": "1,5 g soli",
+        "s": true
+      },
+      {
+        "t": "voliteľne rasca, bylinky alebo korenie",
+        "s": true
+      }
+    ],
+    "obrazok": "img/kvaskove-krekry.jpg",
+    "zdroj": "rodinný receptár",
+    "url": "",
+    "pridane": "2026-10-05",
+    "hladanie": "krekry kváskové crackers semienka bezlepkové Schär Mix B chrumkavé sourdough"
+  },
+  {
     "id": "bezlepkove-povidlove-buchty",
     "nazov": "Bezlepkové povidlové buchty z formy na muffiny",
     "chod": "dezert/sladké",
