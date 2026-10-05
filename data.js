@@ -16,7 +16,7 @@ const RECEPTY = [
     "prakticke": [
       "z rúry"
     ],
-    "stav": "nové",
+    "stav": "vyskúšané",
     "cas": 720,
     "porcie": "1 bochník",
     "suroviny": [
