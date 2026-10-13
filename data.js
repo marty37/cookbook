@@ -4,6 +4,73 @@
 
 const RECEPTY = [
   {
+    "id": "tvarohovi-brumici",
+    "nazov": "Tvarohoví brumíci s ovocím",
+    "chod": "dezert/sladké",
+    "dieta": [
+      "vegetariánske"
+    ],
+    "surovina": [
+      "tvaroh/syr",
+      "ovocie"
+    ],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 40,
+    "porcie": "14 brumíkov (formička na medvedíky)",
+    "suroviny": [
+      {
+        "t": "250 g tučného tvarohu vo vaničke"
+      },
+      {
+        "t": "1 veľké vajce (prípadne 2 malé)"
+      },
+      {
+        "t": "½ hrnčeka trstinového cukru (autorka dáva menej)",
+        "s": true
+      },
+      {
+        "t": "1 lyžička vanilkového extraktu"
+      },
+      {
+        "t": "½ lyžičky citrónovej kôry"
+      },
+      {
+        "t": "½ hrnčeka mlieka"
+      },
+      {
+        "t": "½ hrnčeka oleja",
+        "s": true
+      },
+      {
+        "t": "½ hrnčeka hrubej múky"
+      },
+      {
+        "t": "1 hrnček špaldovej celozrnnej hladkej múky"
+      },
+      {
+        "t": "1 zarovnaná lyžička sódy bikarbóny"
+      },
+      {
+        "t": "1 lyžička prášku do pečiva"
+      },
+      {
+        "t": "štipka soli",
+        "s": true
+      },
+      {
+        "t": "½ hrnčeka lesného či iného ovocia"
+      }
+    ],
+    "obrazok": "img/tvarohovi-brumici.jpg",
+    "zdroj": "FB Kuchtýna",
+    "url": "",
+    "pridane": "2026-10-13",
+    "hladanie": "brumíci medvídci tvaroh tvarohové medvedíky špaldová lesní ovoce formička pro děti kuchtyna"
+  },
+  {
     "id": "kvaskovy-chlieb-schar-mix-b",
     "nazov": "Jednoduchý kváskový chlieb zo Schär Mix B",
     "chod": "pečivo",
