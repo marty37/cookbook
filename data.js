@@ -4,6 +4,64 @@
 
 const RECEPTY = [
   {
+    "id": "piskotova-rolada-tvarohova",
+    "nazov": "Piškótová roláda s tvarohovo-smotanovým krémom",
+    "chod": "dezert/sladké",
+    "dieta": [
+      "vegetariánske"
+    ],
+    "surovina": [
+      "tvaroh/syr",
+      "ovocie"
+    ],
+    "prakticke": [],
+    "stav": "nové",
+    "cas": 240,
+    "porcie": "1 roláda (plech)",
+    "suroviny": [
+      {
+        "t": "4 vajcia, bielky a žĺtky zvlášť (piškót)"
+      },
+      {
+        "t": "100 g kryštálového cukru (piškót)",
+        "s": true
+      },
+      {
+        "t": "130 g hladkej múky (piškót)"
+      },
+      {
+        "t": "vanilkový cukor alebo extrakt (piškót)"
+      },
+      {
+        "t": "citrónová kôra alebo citrónový olej (piškót)"
+      },
+      {
+        "t": "250 g mäkkého tvarohu v kocke, tučného alebo polotučného (krém)"
+      },
+      {
+        "t": "120 g mascarpone (krém)"
+      },
+      {
+        "t": "250 ml smotany na šľahanie min. 33 %, ideálne 40 % (krém)"
+      },
+      {
+        "t": "3–4 lyžice práškového cukru (krém)",
+        "s": true
+      },
+      {
+        "t": "vanilkový cukor alebo extrakt (krém)"
+      },
+      {
+        "t": "jahody na plnenie"
+      }
+    ],
+    "obrazok": "https://vikendovepeceni.cz/wp-content/uploads/2014/04/IMG_6260.jpg",
+    "zdroj": "vikendovepeceni.cz",
+    "url": "https://vikendovepeceni.cz/2014/04/piskotova-rolada-s-tvarohovo-smetanovym/",
+    "pridane": "2026-10-13",
+    "hladanie": "piškotová roláda tvaroh smetana mascarpone jahody krém víkendové pečení rolada"
+  },
+  {
     "id": "tvarohovi-brumici",
     "nazov": "Tvarohoví brumíci s ovocím",
     "chod": "dezert/sladké",
