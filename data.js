@@ -4,6 +4,61 @@
 
 const RECEPTY = [
   {
+    "id": "bezlepkove-hrnckove-knedle",
+    "nazov": "Bezlepkové hrnčekové knedle (žemľové)",
+    "chod": "príloha",
+    "dieta": [
+      "bez lepku",
+      "vegetariánske"
+    ],
+    "surovina": [
+      "vajcia"
+    ],
+    "prakticke": [
+      "jedna panvica/hrniec"
+    ],
+    "stav": "nové",
+    "cas": 75,
+    "porcie": "4 porcie",
+    "suroviny": [
+      {
+        "t": "2 lyžice masla"
+      },
+      {
+        "t": "350 g bezlepkového chleba"
+      },
+      {
+        "t": "soľ",
+        "s": true
+      },
+      {
+        "t": "80 g bezlepkovej múky + na vysypanie hrnčekov"
+      },
+      {
+        "t": "2 vajcia M"
+      },
+      {
+        "t": "250 ml plnotučného mlieka"
+      },
+      {
+        "t": "listová petržlenová vňať"
+      },
+      {
+        "t": "muškátový orech",
+        "s": true
+      },
+      {
+        "t": "maslo alebo masť na vymastenie hrnčekov"
+      }
+    ],
+    "obrazok": "https://kuchynelidlu.cz/productFiles/8267/1132x637-1-877-24-beautyshot-1132x637-Bezlepkove-hrneckove-knedliky-kopie.jpeg",
+    "zdroj": "kuchynelidlu.cz",
+    "url": "https://kuchynelidlu.cz/recept/bezlepkove-hrneckove-knedliky",
+    "pridane": "2026-10-18",
+    "hladanie": "knedlíky hrnečkové houskové bezlepkové knedle žemľové Roman Paulus Lidl příloha omáčka bez lepku",
+    "video": "https://www.youtube.com/watch?v=gxlG4UzlPUQ"
+  },
+  {
     "id": "piskotova-rolada-tvarohova",
     "nazov": "Piškótová roláda s tvarohovo-smotanovým krémom",
     "chod": "dezert/sladké",
