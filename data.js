@@ -4,6 +4,413 @@
 
 const RECEPTY = [
   {
+    "id": "bezlepkove-pernicky-jizerka",
+    "nazov": "Bezlepkové perníčky z Jizerky",
+    "chod": "dezert/sladké",
+    "dieta": [
+      "bez lepku",
+      "vegetariánske"
+    ],
+    "surovina": [
+      "vajcia"
+    ],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 90,
+    "porcie": "1 dávka perníčkov",
+    "suroviny": [
+      {
+        "t": "350 g bezlepkovej múky Jizerka zlatá (alebo Schär Mix C)"
+      },
+      {
+        "t": "140 g cukru",
+        "s": true
+      },
+      {
+        "t": "1 prášok do pečiva"
+      },
+      {
+        "t": "3 vajcia"
+      },
+      {
+        "t": "50 g masla"
+      },
+      {
+        "t": "2 lyžice medu"
+      },
+      {
+        "t": "2 lyžice kakaa"
+      },
+      {
+        "t": "2 lyžičky mletej škorice",
+        "s": true
+      },
+      {
+        "t": "2 lyžičky perníkového korenia"
+      }
+    ],
+    "obrazok": "img/bezlepkove-pernicky-jizerka.jpg",
+    "zdroj": "FB Laura Sovová",
+    "url": "https://www.facebook.com/story.php?story_fbid=2635312570232717&id=100012619985530",
+    "pridane": "2026-10-31",
+    "hladanie": "perníčky bezlepkové Jizerka zlatá vánoční cukroví perník med skořice bez lepku Vánoce"
+  },
+  {
+    "id": "medove-pernicky",
+    "nazov": "Mäkučké medové perníčky na Vianoce",
+    "chod": "dezert/sladké",
+    "dieta": [
+      "vegetariánske"
+    ],
+    "surovina": [
+      "vajcia"
+    ],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 780,
+    "porcie": "1 dávka perníčkov",
+    "suroviny": [
+      {
+        "t": "600 g hladkej múky"
+      },
+      {
+        "t": "250 g práškového cukru",
+        "s": true
+      },
+      {
+        "t": "200 g masla"
+      },
+      {
+        "t": "6 lyžíc medu"
+      },
+      {
+        "t": "2 lyžice kakaa"
+      },
+      {
+        "t": "3 vajcia"
+      },
+      {
+        "t": "1 balenie kypriaceho prášku do perníka"
+      },
+      {
+        "t": "1 lyžička perníkového korenia"
+      },
+      {
+        "t": "1 bielok na potretie"
+      }
+    ],
+    "obrazok": "https://www.nejrecept.cz/upload/31488707_4e76b356bfd265_full.jpg",
+    "zdroj": "nejrecept.cz",
+    "url": "https://www.nejrecept.cz/recept/nejlepsi-mekoucke-medove-pernicky-na-vanoce-r2523",
+    "pridane": "2026-10-31",
+    "hladanie": "perníčky medovníky medové měkké vánoční cukroví Vánoce perník kakao med"
+  },
+  {
+    "id": "bezlepkove-tortilly",
+    "nazov": "Bezlepkové tortilly zo Schär Mix Bread",
+    "chod": "pečivo",
+    "dieta": [
+      "bez lepku",
+      "bez vajec",
+      "vegánske",
+      "vegetariánske"
+    ],
+    "surovina": [],
+    "prakticke": [
+      "jedna panvica/hrniec"
+    ],
+    "stav": "nové",
+    "cas": 20,
+    "porcie": "4 tortilly",
+    "suroviny": [
+      {
+        "t": "200 g múky Schär Mix Bread"
+      },
+      {
+        "t": "100 ml vody",
+        "s": true
+      },
+      {
+        "t": "3 lyžice olivového oleja",
+        "s": true
+      },
+      {
+        "t": "⅓ lyžičky soli",
+        "s": true
+      }
+    ],
+    "obrazok": "img/bezlepkove-tortilly.jpg",
+    "zdroj": "zdieľané cez Signal",
+    "url": "",
+    "pridane": "2026-10-27",
+    "hladanie": "tortilly tortilla wrap placky bezlepkové Schär Mix Bread vegan bez vajec bez lepku"
+  },
+  {
+    "id": "kvaskovy-chlieb-jednodruhove-muky",
+    "nazov": "Kváskový bezlepkový chlieb z jednodruhových múk",
+    "chod": "pečivo",
+    "dieta": [
+      "bez lepku",
+      "bez vajec",
+      "vegánske",
+      "vegetariánske"
+    ],
+    "surovina": [],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 960,
+    "porcie": "1 bochník",
+    "suroviny": [
+      {
+        "t": "1 PL aktívneho bezlepkového kvásku (rozkvas)"
+      },
+      {
+        "t": "50 g ryžovej múky (rozkvas)"
+      },
+      {
+        "t": "50 g čirokovej múky (rozkvas)"
+      },
+      {
+        "t": "100 g vlažnej vody (rozkvas)",
+        "s": true
+      },
+      {
+        "t": "15 g psyllia, celého alebo mletého (gél)"
+      },
+      {
+        "t": "300 g teplej vody (gél)",
+        "s": true
+      },
+      {
+        "t": "200 g teplej vody, 35–40 °C (cesto)",
+        "s": true
+      },
+      {
+        "t": "100 g čirokovej múky (cesto)"
+      },
+      {
+        "t": "100 g pohánkovej múky (cesto)"
+      },
+      {
+        "t": "10 g ryžovej múky (cesto)"
+      },
+      {
+        "t": "80 g tapiokového škrobu (cesto)"
+      },
+      {
+        "t": "70 g teffovej múky — možno nahradiť ryžovou (cesto)"
+      },
+      {
+        "t": "15 g múky koji — voliteľné (cesto)"
+      },
+      {
+        "t": "10 g soli",
+        "s": true
+      },
+      {
+        "t": "1–2 lyžičky rasce, celej alebo mletej",
+        "s": true
+      }
+    ],
+    "obrazok": "img/kvaskovy-chlieb-jednodruhove-muky.jpg",
+    "zdroj": "FB skupina CELIAKIE",
+    "url": "https://www.facebook.com/groups/133423536670589/posts/27704410645811840/",
+    "pridane": "2026-10-27",
+    "hladanie": "kváskový chléb jednodruhové mouky čirok pohanka teff tapioka psyllium koji bezlepkový chleba celiakie"
+  },
+  {
+    "id": "bezlepkovy-jablkovy-strudl",
+    "nazov": "Bezlepkový jablkový štrúdl z dvoch surovín",
+    "chod": "dezert/sladké",
+    "dieta": [
+      "bez lepku",
+      "vegetariánske"
+    ],
+    "surovina": [
+      "ovocie"
+    ],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 50,
+    "porcie": "1 štrúdl",
+    "suroviny": [
+      {
+        "t": "2 kelímky maslovej nátierky (pomazánkové máslo)"
+      },
+      {
+        "t": "2 kelímky múky Schär Mix B (odmeraj kelímkom od nátierky)"
+      },
+      {
+        "t": "1 vajce na potretie"
+      },
+      {
+        "t": "bezlepkové ovsené vločky (možno nahradiť pohánkovými)"
+      },
+      {
+        "t": "jablká"
+      },
+      {
+        "t": "škorica",
+        "s": true
+      },
+      {
+        "t": "orechy"
+      }
+    ],
+    "obrazok": "img/bezlepkovy-jablkovy-strudl.jpg",
+    "zdroj": "instagram.com/pecubezlepku",
+    "url": "https://www.instagram.com/reel/Dc-wwy_Njg3/",
+    "pridane": "2026-10-27",
+    "hladanie": "štrúdl závin jablečný jablkový bezlepkový pomazánkové máslo Schär Mix B pecubezlepku",
+    "video": "https://www.instagram.com/reel/Dc-wwy_Njg3/"
+  },
+  {
+    "id": "bezlepkove-kysnute-lievance",
+    "nazov": "Bezlepkové kysnuté lievance",
+    "chod": "raňajky/desiata",
+    "dieta": [
+      "bez lepku",
+      "vegetariánske"
+    ],
+    "surovina": [
+      "vajcia"
+    ],
+    "prakticke": [
+      "jedna panvica/hrniec"
+    ],
+    "stav": "nové",
+    "cas": 50,
+    "porcie": "1 dávka lievancov",
+    "suroviny": [
+      {
+        "t": "300 g múky Schär Mix B"
+      },
+      {
+        "t": "550 ml vlažného mlieka"
+      },
+      {
+        "t": "1 vajce"
+      },
+      {
+        "t": "½ kocky čerstvého droždia"
+      },
+      {
+        "t": "štipka soli",
+        "s": true
+      },
+      {
+        "t": "2 lyžice cukru",
+        "s": true
+      },
+      {
+        "t": "olej na smaženie",
+        "s": true
+      },
+      {
+        "t": "práškový cukor a škorica na obalenie",
+        "s": true
+      }
+    ],
+    "obrazok": "img/bezlepkove-kysnute-lievance.jpg",
+    "zdroj": "instagram.com/pecubezlepku",
+    "url": "https://www.instagram.com/reel/DdrPmKrN7hP/",
+    "pridane": "2026-10-27",
+    "hladanie": "lívance lievance kynuté bezlepkové droždí Schär Mix B skořice snídaně pecubezlepku",
+    "video": "https://www.instagram.com/reel/DdrPmKrN7hP/"
+  },
+  {
+    "id": "syrovo-tvarohove-krekry",
+    "nazov": "Syrovo-tvarohové krekry (od 1 roka)",
+    "chod": "chuťovka",
+    "dieta": [
+      "vegetariánske"
+    ],
+    "surovina": [
+      "tvaroh/syr",
+      "vajcia"
+    ],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 35,
+    "porcie": "~100 trojuholníčkov",
+    "suroviny": [
+      {
+        "t": "200 g goudy (či podobného syra)"
+      },
+      {
+        "t": "250 g tvarohu (vanička), pre deti plnotučný"
+      },
+      {
+        "t": "80 g prepusteného či klasického masla"
+      },
+      {
+        "t": "300 g hladkej múky (môže byť aj špaldová)"
+      },
+      {
+        "t": "2 vajcia"
+      },
+      {
+        "t": "prípadne soľ podľa chuti",
+        "s": true
+      }
+    ],
+    "obrazok": "https://mamavkuchyni.cz/wp-content/uploads/2020/08/IMG_21751-683x1024.jpg",
+    "zdroj": "mamavkuchyni.cz",
+    "url": "https://mamavkuchyni.cz/syrovo-tvarohove-krekry/",
+    "pridane": "2026-10-27",
+    "hladanie": "krekry sýrové tvarohové gouda slané sušenky svačina pro děti máma v kuchyni"
+  },
+  {
+    "id": "bezlepkove-cesto-na-zavin",
+    "nazov": "Bezlepkové cesto na závin",
+    "chod": "omáčka/základ",
+    "dieta": [
+      "bez lepku",
+      "vegetariánske"
+    ],
+    "surovina": [
+      "vajcia"
+    ],
+    "prakticke": [
+      "z rúry"
+    ],
+    "stav": "nové",
+    "cas": 45,
+    "porcie": "2 záviny",
+    "suroviny": [
+      {
+        "t": "330 g múky Schär Mix B"
+      },
+      {
+        "t": "190 g kyslej smotany (1 balenie)"
+      },
+      {
+        "t": "2 vajcia"
+      },
+      {
+        "t": "náplň podľa chuti (napr. jablká)"
+      },
+      {
+        "t": "rozpustené maslo na potretie"
+      }
+    ],
+    "obrazok": "https://i0.wp.com/lateta.cz/wp-content/uploads/2021/01/zavin.jpg?resize=768%2C1024&ssl=1",
+    "zdroj": "lateta.cz",
+    "url": "https://lateta.cz/2021/01/19/testo-na-zavin/",
+    "pridane": "2026-10-27",
+    "hladanie": "těsto na závin štrúdl bezlepkové Schär Mix B zakysaná smetana lateta"
+  },
+  {
     "id": "bezlepkove-hrnckove-knedle",
     "nazov": "Bezlepkové hrnčekové knedle (žemľové)",
     "chod": "príloha",
